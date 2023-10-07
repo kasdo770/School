@@ -6,7 +6,7 @@ export default function Home() {
       {/*nav*/}
 
       <div className="flex justify-between items-center mx-20 my-4">
-        <p className="text-xl">لوجو</p>
+        <p className="text-xl">عمار حمار</p>
         <div className="flex">
           <p className="mr-5">ناف1111111</p>
           <p className="mr-5">ناف2222222</p>
