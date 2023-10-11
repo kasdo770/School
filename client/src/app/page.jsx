@@ -6,10 +6,11 @@ export default function Home() {
     <div className="font-serif">
       {/*top*/}
       <Image
-        className="absolute z-[-1] brightness-[60%]	"
-        src={"/ahaha.jpg"}
-        fill={true}
-        loading="lazy"
+        src="https://4kwallpapers.com/images/wallpapers/splash-water-orange-background-macro-light-3840x2160-5732.jpg"
+        width={5000}
+        height={5000}
+        alt="333"
+        className="h-[35rem] w-[100%] absolute no-repeat object-fit top-0 z-[-1] brightness-[60%]"
       ></Image>
       {/*top-nav*/}
 
@@ -18,7 +19,7 @@ export default function Home() {
         className="flex justify-between items-center mx-2 sm:mx-5 lg:mx-20 mt-4 text-[16px] sm:text-[18px] lg:text-[21px] text-white"
       >
         <p className="text-[24px] sm:text-[29px] lg:text-[35px] font-bold">
-          عمار حمار
+          fr frعمار حمارنغس kys :)
         </p>
         <div className="flex">
           <p className="ml-5 sm:ml-8">سحلب مجاني</p>
