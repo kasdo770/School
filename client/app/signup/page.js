@@ -6,11 +6,10 @@ export default function Home() {
     <div className="font-serif">
       {/*top*/}
       <Image
-        src="https://4kwallpapers.com/images/wallpapers/splash-water-orange-background-macro-light-3840x2160-5732.jpg"
-        width={5000}
-        height={5000}
-        alt="333"
-        className="h-[35rem] w-[100%] absolute no-repeat object-fit top-0 z-[-1] brightness-[60%]"
+        className="absolute z-[-1] brightness-[10%]	"
+        src={"/ahaha.jpg"}
+        fill={true}
+        loading="lazy"
       ></Image>
       {/*top-nav*/}
 
