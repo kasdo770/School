@@ -1,9 +1,9 @@
 import Image from "next/image";
 import { AiOutlineDownCircle } from "react-icons/ai";
-
+import { RxHamburgerMenu } from "react-icons/rx";
 export default function Home() {
   return (
-    <div>
+    <div className="">
       {/*top*/}
 
       {/*top-nav*/}
@@ -12,7 +12,7 @@ export default function Home() {
           src={"/ahaha.jpg"}
           width={5000}
           height={5000}
-          className="w-full h-full z-[-8] absolute object-cover brightness-[70%]"
+          className="w-full h-full z-[-8] absolute object-cover brightness-[70%] h-screen"
         ></Image>
 
         <div
@@ -22,6 +22,7 @@ export default function Home() {
           <p className="text-[24px] sm:text-[29px] lg:text-[35px] font-bold mt-4">
             اسكولا
           </p>
+          <RxHamburgerMenu className="mt-4 text-[24px] sm:hidden"></RxHamburgerMenu>
           <div className="mt-4 hidden sm:flex">
             <p className="ml-5 sm:ml-8"> الصفحة الرئيسية</p>
             <p className="ml-5 sm:ml-8"> الصفحة الصفحه</p>
@@ -48,8 +49,8 @@ export default function Home() {
       {/*end of top*/}
       {/*--------------------------------------------------------*/}
       {/*midsection*/}
-      <div className="mt-[13rem] md:mt-[10rem] text-center text-[30px]">
-        ليه تستخدم اسكوزندنداا
+      <div className="mt-[10rem] md:mt-[7rem] text-center text-[30px]">
+        ليه اسكولا؟
       </div>
       <div className="my-[6rem]">
         <div className="flex">
