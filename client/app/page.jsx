@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { MdOutlineNotStarted } from "react-icons/md";
+import { AiOutlineDownCircle } from "react-icons/ai";
 
 export default function Home() {
   return (
@@ -9,7 +9,7 @@ export default function Home() {
         src={"/ahaha.jpg"}
         width={5000}
         height={5000}
-        className="w-full h-full z-[-8] absolute top-0 object-cover"
+        className="w-full h-full z-[-8] absolute top-0 object-cover brightness-[70%]"
       ></Image>
       <div className="h-screen w-full top-0 absolute z-[-1] gradient"></div>
       {/*top-nav*/}
@@ -18,18 +18,18 @@ export default function Home() {
         className="flex justify-between items-center mx-2 sm:mx-5 lg:mx-20 mt-4 text-[16px] sm:text-[18px] lg:text-[21px] text-white"
       >
         <p className="text-[24px] sm:text-[29px] lg:text-[35px] font-bold">
-          عمار حمار
+          اسكولا
         </p>
         <div className="flex">
-          <p className="ml-5 sm:ml-8">سحلب مجاني</p>
-          <p className="ml-5 sm:ml-8">واجهة السحلب</p>
-          <p>سحلب جود</p>
+          <p className="ml-5 sm:ml-8"> الصفحة الرئيسية</p>
+          <p className="ml-5 sm:ml-8"> الصفحة الصفحه</p>
+          <p> انضم لنا</p>
         </div>
       </div>
       {/*top-text*/}
       <div className="flex justify-center">
-        <p className="font-medium text-[25px] md:text-[30px] lg:text-[40px] text-center mb-4 mt-[8rem] text-white">
-          لمازا نحب الخرفان.؟
+        <p className="font-bold text-[25px] md:text-[30px] lg:text-[40px] text-center mb-4 mt-[28%] sm:mt-[18%] md:mt-[15%] lg:mt-[14%] text-white">
+          ما هو اسكولا ؟
         </p>
       </div>
       <div className="flex justify-center">
@@ -37,14 +37,12 @@ export default function Home() {
           dir="rtl"
           className="text-[19px] md:text-[23px] text-center w-[80%] md:w-[60%] lg:w-[50%] text-white"
         >
-          في حين أن الأغنام قد تبدو مثل حيوانات الماشية فارغة الرأس، فقد تم
-          إجراء العديد من الدراسات لاكتشاف وإثبات صفات الخروف وعواطفها. الأغنام
-          يحددان كيف تتصرحيوانات فريسة وحيوانات اجتماعية، هذان جانبان رئيسيان
-          يحددان كيف تتصرف
+          تواجه بعض المدارس الكبيرة عدة مشاكل من الناحية التنظيمية والتي نهدف
+          الي حلها هنا في اسكولا بأقل تكلفة وسهولة تامة.
         </p>
       </div>
-      <div className="flex justify-center text-[45px] md:text-[60px] mt-10 lg:mt-4 xl:mt-10 text-white">
-        <MdOutlineNotStarted></MdOutlineNotStarted>
+      <div className="flex justify-center text-[40px] md:text-[50px] mt-[5rem] lg:mt-[3rem] xl:mt-[8rem] text-white">
+        <AiOutlineDownCircle></AiOutlineDownCircle>
       </div>
       {/*end of top*/}
       {/*--------------------------------------------------------*/}
