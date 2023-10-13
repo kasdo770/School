@@ -35,7 +35,7 @@ export default function Home() {
   }
   return (
     <div className="flex justify-center items-center h-screen overflow-auto">
-      <Image src={"/register.jpg"} width={5000}
+      <Image src={"/register2.jpg"} width={5000}
         height={5000}
         className="w-full z-[-8] absolute object-cover h-screen brightness-80" />
       <container className="w-[400px] h-fit  bg-white border-[1px] border-gray-500 rounded-lg">
