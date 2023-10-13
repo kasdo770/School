@@ -67,7 +67,7 @@ export default function Home() {
       {/*--------------------------------------------------------*/}
       {/*midsection*/}
       <div className="bg-[#F5FFFA]">
-        <div className="pt-[7rem] 2xl:max-w-[80%] 2xl:mx-auto ">
+        <div className="pt-[7rem] lg:mx-[2rem] 2xl:max-w-[80%] 2xl:mx-auto ">
           <p
             className="text-center text-[28px] sm:text-[34px] lg:text-[50px] font-bold mb-[6rem]"
             id="why?"
