@@ -3,7 +3,7 @@ import React from 'react'
 export default function Input({ label, type, InputClass, min, max, setdata, data, error, required }) {
     return (
         <>
-            <div dir='rtl' className='flex flex-col my-5 w-full z-[2]'>
+            <div dir='rtl' className='flex flex-col mt-2 mb-1 w-full z-[2]'>
                 <label className="">{label}</label>
                 <input
                     onChange={(e) => { setdata(e.target.value) }}
@@ -12,7 +12,7 @@ export default function Input({ label, type, InputClass, min, max, setdata, data
                     max={max}
                     type={type}
                     required
-                    className='border-0 bg-transparent border-b-2 border-black mt-1 p-2  ' >
+                    className='border-0 bg-transparent border-b-2 border-black p-1 mb-1  ' >
 
                 </input>
                 {error && (
