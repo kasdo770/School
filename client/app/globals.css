@@ -33,14 +33,26 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(to bottom,
+  background: linear-gradient(
+      to bottom,
       transparent,
-      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
 }
 
 .gradient {
   background: rgb(0, 185, 255);
-  background: linear-gradient(24deg,
-      rgba(0, 185, 255, 0.45) 50%,
-      rgba(255, 112, 0, 0.45) 50%);
+  background: linear-gradient(
+    24deg,
+    rgba(0, 185, 255, 0.45) 50%,
+    rgba(255, 112, 0, 0.45) 50%
+  );
+}
+.transition-sm {
+  transition: all 0.2s;
+  scroll-behavior: smooth;
+}
+html {
+  scroll-behavior: smooth;
 }

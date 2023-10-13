@@ -9,6 +9,7 @@ import { BsSpeedometer } from "react-icons/bs";
 import { SlOrganization } from "react-icons/sl";
 import { FaSchool } from "react-icons/fa";
 import { BiLogoGmail } from "react-icons/bi";
+
 export default function Home() {
   return (
     <div>
@@ -27,17 +28,17 @@ export default function Home() {
           <p className="text-[24px] sm:text-[29px] lg:text-[35px] font-bold mt-4">
             سكولا
           </p>
-          <RxHamburgerMenu className="mt-4 text-[24px] sm:hidden"></RxHamburgerMenu>
-          <div className="mt-4 hidden sm:flex">
+
+          <div className="mt-4 flex">
             <a
-              href="#"
+              href="login"
               className="ml-5 sm:ml-8 bg-[#ff7000] p-1 rounded hover:opacity-[60%] transition-sm"
             >
               سجل دخولك
             </a>
             <a
-              href="#"
-              className=" bg-[#00b9ff] p-1 rounded-sm hover:opacity-[60%] transition-sm"
+              href="register"
+              className=" bg-[#00b9ff] p-1 rounded hover:opacity-[60%] transition-sm"
             >
               انضم لينا
             </a>
@@ -137,7 +138,7 @@ export default function Home() {
                 حسابك عند المدرسة الخاصه بيك.. سواء كنت طالب او معلم او ولي امر.
               </p>
               <a
-                href="#"
+                href="login"
                 className="bg-[#00b9ff] rounded-sm p-2 text-white my-10 hover:opacity-[60%] transition-sm"
               >
                 سجل دخولك
@@ -153,7 +154,7 @@ export default function Home() {
                 انشاء حساب مدرسة.. فقط بواسطة المدير الخاص بها.
               </p>
               <a
-                href="#"
+                href="register"
                 className="bg-[#ff7000] rounded-sm p-2 text-white my-10 hover:opacity-[60%] transition-sm"
               >
                 انشئ حساب مدرسة
