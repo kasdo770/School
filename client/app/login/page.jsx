@@ -1,72 +1,48 @@
+"use client";
 import Image from "next/image";
-import { MdOutlineNotStarted } from "react-icons/md";
+import React, { useState } from 'react';
+import Input from "../components/Input";
+import Link from 'next/link'
 
 export default function Home() {
+  const [code, setcode] = useState("");
+  const [email, setemail] = useState("");
+  const [password, setpassword] = useState("");
+  const [passerror, setpasserror] = useState("");
+
+  function validate() {
+    if (password && code && email) {
+      //send data
+    }
+    else {
+      setpasserror("واحدة من الخانات فارغة")
+    }
+  }
   return (
-    <div className="font-serif">
-      {/*top*/}
-      <Image
-        className="absolute z-[-1] brightness-[10%]	"
-        src={"/ahaha.jpg"}
-        fill={true}
-        loading="lazy"
-      ></Image>
-      {/*top-nav*/}
+    <div className="flex justify-center items-center h-screen">
+      <Image src={"/login.png"} width={5000}
+        height={5000}
+        className="w-full z-[-8] absolute object-cover h-screen brightness-80" />
+      <container className="w-[619px] min-h-fit  bg-white shadow-2xl rounded-lg ">
+        <div className="flex justify-center items-center ">
+          <h1 className="mt-[20px] text-4xl font-extrabold">اسكولا</h1>
 
-      <div
-        dir="rtl"
-        className="flex justify-between items-center mx-2 sm:mx-5 lg:mx-20 mt-4 text-[16px] sm:text-[18px] lg:text-[21px] text-white"
-      >
-        <p className="text-[24px] sm:text-[29px] lg:text-[35px] font-bold">
-          عمار حمار
-        </p>
-        <div className="flex">
-          <p className="ml-5 sm:ml-8">سحلب مجاني</p>
-          <p className="ml-5 sm:ml-8">واجهة السحلب</p>
-          <p>سحلب جود</p>
         </div>
-      </div>
-      {/*top-text*/}
+        <div className="flex justify-center flex-col items-end mx-12 mt-5  ">
+          <Input data={code} setdata={setcode} type={'id'} label={"الكود "} />
+          <Input data={email} setdata={setemail} type={'email'} label={"الايميل"} />
+          <Input error={passerror} data={password} setdata={setpassword} type={'password'} label={"كلمة المرور"} />
+          <Link href='/register' className="flex justify-center text-blue-800 border-b-[1px] border-blue-800 p-1 hover:text-blue-600 hover:cursor-pointer z-[2]">
+            <text>ليس لديك حساب؟</text>
+          </Link>
+          <button onClick={validate} className="w-full rounded-lg border-[1px] z-[2] bg-white p-2 text-black hover:bg-orange-200 active:bg-orange-400 hover:text-white text-extrabold mt-10 text-lg border-black">اهلا بك</button>
+        </div>
+        <div className="flex items-end mt-[-20rem] md:mt-[-35rem]" >
+          <Image src={"/orangewave.png"} width={5000} height={100} className="w-full h-auto  z-[1]" />
+        </div>
 
-      <div className="flex justify-center">
-        <p className="font-medium text-[25px] md:text-[30px] lg:text-[40px] text-center mb-4 mt-[8rem] text-white">
-          لمازا نحب الخرفان.؟
-        </p>
-      </div>
-      <div className="flex justify-center">
-        <p
-          dir="rtl"
-          className="text-[19px] md:text-[23px] text-center w-[80%] md:w-[60%] lg:w-[50%] text-white"
-        >
-          في حين أن الأغنام قد تبدو مثل حيوانات الماشية فارغة الرأس، فقد تم
-          إجراء العديد من الدراسات لاكتشاف وإثبات صفات الخروف وعواطفها. الأغنام
-          يحددان كيف تتصرحيوانات فريسة وحيوانات اجتماعية، هذان جانبان رئيسيان
-          يحددان كيف تتصرف
-        </p>
-      </div>
-      <div className="flex justify-center text-[45px] md:text-[60px] mt-6 text-white">
-        <MdOutlineNotStarted></MdOutlineNotStarted>
-      </div>
-      {/*end of top*/}
-      {/*--------------------------------------------------------*/}
-      {/*midsection*/}
-      <div className="mt-[13rem] md:mt-[10rem] text-center text-[30px]">
-        ليه تستخدم اسكوزندنداا
-      </div>
-      <div className="my-[6rem]">
-        <div className="flex">
-          <Image></Image>
-          <div></div>
-        </div>
-        <div className="flex">
-          <Image></Image>
-          <div></div>
-        </div>
-        <div className="flex">
-          <Image></Image>
-          <div></div>
-        </div>
-      </div>
+
+      </container>
     </div>
-  );
+  )
 }
