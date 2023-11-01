@@ -25,20 +25,24 @@ export default function Home() {
           dir="rtl"
           className="flex justify-between items-center mx-2 sm:mx-5 xl:mx-[8rem] text-[16px] sm:text-[18px] lg:text-[21px] text-white 2xl:max-w-[80%]"
         >
-          <p className="text-[24px] sm:text-[29px] lg:text-[35px] font-bold mt-4">
-            سكولا
-          </p>
+          <div className="flex justify-center mt-4">
+            <Image src={"/logo.png"} width={35} height={10} className="h-10 mt-2 ml-3 bg-white rounded-full" />
+            <p className="text-[24px] sm:text-[29px] lg:text-[35px] font-bold ">
+
+              سكولا
+            </p>
+          </div>
 
           <div className="mt-4 flex">
             <a
               href="login"
-              className="ml-5 sm:ml-8 bg-[#ff7000] p-1 rounded hover:opacity-[60%] transition-sm"
+              className="ml-5 sm:ml-8 bg-[#C16514] px-1 rounded-lg hover:opacity-[60%] transition-sm"
             >
               سجل دخولك
             </a>
             <a
               href="register"
-              className=" bg-[#00b9ff] p-1 rounded hover:opacity-[60%] transition-sm"
+              className=" bg-[#3D8BA1] px-1 rounded-lg hover:opacity-[60%] transition-sm"
             >
               انضم لينا
             </a>
