@@ -10,13 +10,14 @@ import {
 import { useState } from "react";
 import { BiEditAlt } from "react-icons/bi";
 
-export function TableRows(props) {
+export function TableRowsStudents(props) {
   const [on, setOn] = useState(false);
 
   return (
     <TableRow className="">
-      <TableCell className="text-right p-5">{props.subject}</TableCell>
-      <TableCell className="text-right p-5">{props.title}</TableCell>
+      <TableCell className="text-right p-5">{props.section}</TableCell>
+      <TableCell className="text-right p-5">{props.system}</TableCell>
+      <TableCell className="text-right p-5">{props.grade}</TableCell>
       <TableCell className="text-right p-5">{props.phone}</TableCell>
       <TableCell className="text-right p-5">{props.id}</TableCell>
       <TableCell
