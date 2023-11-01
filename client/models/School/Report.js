@@ -9,4 +9,4 @@ const reportSchema = new Schema({
     accepted: Boolean
 });
 
-module.exports = mongoose.model("Report", reportSchema)
+module.exports = mongoose.models.Report || mongoose.model("Report", reportSchema)

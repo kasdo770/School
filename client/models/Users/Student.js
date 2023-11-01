@@ -2,12 +2,7 @@ import mongoose from 'mongoose';
 const { Schema } = mongoose;
 
 const studentSchema = new Schema({
-    name: String,
-    password: String,
-    code: String,
-    ID: String,
     grade: String,
-    school: mongoose.SchemaTypes.ObjectId,
     class: mongoose.SchemaTypes.ObjectId,
     quizzes: [{
         subject: String,
@@ -33,4 +28,4 @@ studentSchema.methods.warnings = function () {
 }
 
 
-module.exports = mongoose.model("Student", studentSchema)
+module.exports = mongoose.models.Student || mongoose.model("Student", studentSchema)

@@ -13,4 +13,4 @@ const newSchema = new Schema({
 
 });
 
-module.exports = mongoose.model("New", newSchema)
+module.exports = mongoose.models.New || mongoose.model("New", newSchema)

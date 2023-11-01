@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   env: {
-    mongodburl: "mongodb+srv://lordskasdo:Albosaty123@school.dqxwdmb.mongodb.net/"
+    MONGODB_URI: "mongodb+srv://lordskasdo:Albosaty123@school.dqxwdmb.mongodb.net/"
   }
 }
 
