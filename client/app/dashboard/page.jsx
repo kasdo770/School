@@ -24,20 +24,18 @@ export default function Dashboard() {
               لوحة القيادة
             </h1>
             <MdKeyboardArrowDown
-              className={`cursor-pointer text-xl transition-sm ${
-                more == true ? "-rotate-90" : ""
-              }`}
+              className={`cursor-pointer text-xl transition-sm ${more == true ? "-rotate-90" : ""
+                }`}
               onClick={() => {
                 setMore(!more);
               }}
             />
             <div
               dir="rtl"
-              className={`flex items-center transition-md gap-2 xl:gap-4 ml-[-25rem] ${
-                more == true
-                  ? "opacity-100 ml-[0.1rem] sm:ml-[0.5rem]"
-                  : "opacity-0"
-              }`}
+              className={`flex items-center transition-md gap-2 xl:gap-4 ml-[-25rem] ${more == true
+                ? "opacity-100 ml-[0.1rem] sm:ml-[0.5rem]"
+                : "opacity-0"
+                }`}
             >
               <a
                 href="#"
@@ -58,32 +56,30 @@ export default function Dashboard() {
             </div>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 border-2 w-fit mr-3">
             <input
               dir="rtl"
               type="text"
               placeholder="البحث.."
-              className={`border-2 w-[6rem] sm:w-[10rem] lg:w-[16rem] p-1 focus:border-gray-500 rounded-[4px] pr-[2rem] transition-sm ${
-                more == true ? "opacity-0 md:opacity-100" : ""
-              } `}
+              className={`border-0 w-[6rem] active:border-0 focus:border-0 sm:w-[10rem] lg:w-[16rem] p-1 focus:border-gray-500 rounded-[4px] pr-[2rem] transition-sm ${more == true ? "opacity-0 md:opacity-100" : ""
+                } `}
             ></input>
-            {/* <AiOutlineSearch className="text-[26px]" /> */}
+            <AiOutlineSearch className="text-[26px]  right-0 mr-3" />
           </div>
+
         </div>
         {/* end of nav & start of body ---------------------------------------------------------*/}
 
         <div className="bg-[#f2f1f6] h-full">
           <div
-            className={`${
-              page == 1 ? "block" : "hidden"
-            } max-h-[35rem] overflow-auto`}
+            className={`${page == 1 ? "block" : "hidden"
+              } max-h-[35rem] overflow-auto`}
           >
             <TeacherTables />
           </div>
           <div
-            className={`${
-              page == 2 ? "block" : "hidden"
-            } max-h-[35rem] overflow-auto`}
+            className={`${page == 2 ? "block" : "hidden"
+              } max-h-[35rem] overflow-auto`}
           >
             <Students />
           </div>
@@ -113,11 +109,10 @@ export default function Dashboard() {
 
         <div className="flex flex-col items-end md:mt-0 gap-3 text-[15px] lg:text-[18px] 2xl:text-[21px]">
           <button
-            className={`flex items-center justify-end w-[90%] mx-auto gap-2 px-[4px] py-[3px] rounded-sm cursor-pointer transition-sm hover:bg-[#ff7000] hover:text-white hover:opacity-[100%] pl-2 ${
-              page == 1
-                ? "opacity-[100%] bg-[#00b9ff] text-white "
-                : "opacity-[50%]"
-            }`}
+            className={`flex items-center justify-end w-[90%] mx-auto gap-2 px-[4px] py-[3px] rounded-sm cursor-pointer transition-sm hover:bg-[#ff7000] hover:text-white hover:opacity-[100%] pl-2 ${page == 1
+              ? "opacity-[100%] bg-[#00b9ff] text-white "
+              : "opacity-[50%]"
+              }`}
             onClick={() => {
               setPage(1);
             }}
@@ -126,11 +121,10 @@ export default function Dashboard() {
             <FaChalkboardTeacher className="mx-auto md:mx-0 text-2xl md:text-lg lg:text-xl" />
           </button>
           <button
-            className={`flex items-center justify-end w-[90%] mx-auto gap-2 px-[4px] py-[3px] rounded-sm cursor-pointer transition-sm hover:bg-[#ff7000] hover:text-white hover:opacity-[100%] pl-2 ${
-              page == 2
-                ? "opacity-[100%] bg-[#00b9ff] text-white "
-                : "opacity-[50%]"
-            }`}
+            className={`flex items-center justify-end w-[90%] mx-auto gap-2 px-[4px] py-[3px] rounded-sm cursor-pointer transition-sm hover:bg-[#ff7000] hover:text-white hover:opacity-[100%] pl-2 ${page == 2
+              ? "opacity-[100%] bg-[#00b9ff] text-white "
+              : "opacity-[50%]"
+              }`}
             onClick={() => {
               setPage(2);
             }}
@@ -139,11 +133,10 @@ export default function Dashboard() {
             <PiStudentBold className="mx-auto md:mx-0 text-2xl md:text-lg lg:text-xl" />
           </button>
           <button
-            className={`flex items-center justify-end w-[90%] mx-auto gap-2 px-[4px] py-[3px] rounded-sm cursor-pointer transition-sm hover:bg-[#ff7000] hover:text-white hover:opacity-[100%] pl-2 ${
-              page == 3
-                ? "opacity-[100%] bg-[#00b9ff] text-white "
-                : "opacity-[50%]"
-            }`}
+            className={`flex items-center justify-end w-[90%] mx-auto gap-2 px-[4px] py-[3px] rounded-sm cursor-pointer transition-sm hover:bg-[#ff7000] hover:text-white hover:opacity-[100%] pl-2 ${page == 3
+              ? "opacity-[100%] bg-[#00b9ff] text-white "
+              : "opacity-[50%]"
+              }`}
             onClick={() => {
               setPage(3);
             }}
@@ -152,11 +145,10 @@ export default function Dashboard() {
             <AiOutlineSchedule className="mx-auto md:mx-0 text-2xl md:text-lg lg:text-xl" />
           </button>
           <button
-            className={`flex items-center justify-end w-[90%] mx-auto gap-2 px-[4px] py-[3px] rounded-sm cursor-pointer transition-sm hover:bg-[#ff7000] hover:text-white hover:opacity-[100%] pl-2 ${
-              page == 4
-                ? "opacity-[100%] bg-[#00b9ff] text-white "
-                : "opacity-[50%]"
-            }`}
+            className={`flex items-center justify-end w-[90%] mx-auto gap-2 px-[4px] py-[3px] rounded-sm cursor-pointer transition-sm hover:bg-[#ff7000] hover:text-white hover:opacity-[100%] pl-2 ${page == 4
+              ? "opacity-[100%] bg-[#00b9ff] text-white "
+              : "opacity-[50%]"
+              }`}
             onClick={() => {
               setPage(4);
             }}
