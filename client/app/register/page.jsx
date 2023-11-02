@@ -39,7 +39,7 @@ export default function Home() {
     <div className="flex lg:flex-row justify-center lg:justify-between  h-screen overflow-hidden">
       <Image src={"/right4.png"} width={4000}
         height={5000}
-        className="lg:w-[70%] lg:rotate-0  -rotate-90 lg:relative z-[-1] absolute m-0 p-0 hidden lg:block lg:h-screen " />
+        className="lg:w-[70%] lg:rotate-0 select-none -rotate-90 lg:relative z-[-1] absolute m-0 p-0 hidden lg:block lg:h-screen " />
       <Image src={"/mobilesignin.png"} width={4000}
         height={5000}
         className="lg:w-[50%] lg:rotate-0  lg:relative z-[-1] absolute m-0 p-0 w-[300%] block lg:hidden bottom-0 h-[16rem] lg:h-screen " />

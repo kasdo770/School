@@ -21,21 +21,21 @@ export default function Home() {
   }
   return (
     <div className="flex lg:flex-row justify-center lg:justify-between  h-screen overflow-hidden">
-      <Image src={"/right2.png"} width={4000}
+      <Image src={"/right5.png"} width={4000}
         height={5000}
-        className="lg:w-[50%] lg:rotate-0  -rotate-90 lg:relative z-[-1] absolute m-0 p-0 hidden lg:block lg:h-screen " />
+        className="lg:w-[50%] lg:rotate-0 select-none  -rotate-90 lg:relative z-[-1] absolute m-0 p-0 hidden lg:block lg:h-screen " />
       <Image src={"/mobilesignin.png"} width={4000}
         height={5000}
         className="lg:w-[50%] lg:rotate-0  lg:relative z-[-1] absolute m-0 p-0 w-[300%] block lg:hidden bottom-0 h-[16rem] lg:h-screen " />
       <container className="h-max w-max mx-auto  md:mx-[6rem] xl:mx-[12rem] bg-transparent">
 
         <div dir="rtl" className="flex justify-center lg:justify-start items-center gap-4 mt-10 ">
-          <Image src={"/logo.png"} width={60} height={60} />
+          <Image src={"/logo.png"} width={30} height={30} />
           <h1 className=" text-2xl font-bold">اسكولا</h1>
 
         </div>
 
-        <div dir="rtl" className="flex justify-start flex-col items-end  mt-[60%]  ">
+        <div dir="rtl" className="flex justify-start flex-col items-end  mt-[40%]  ">
           <h1 className="flex justify-start text-4xl font-black mb-10">اهلا بك الى اسكولا</h1>
           <section className='flex mt-5 mb-1 w-full z-[2] text-[20px] p-[5px] rounded-md outline-none border-solid items-center border-black  border-[1px]'>
             <CgProfile className="w-6 h-6 pl-1 border-black border-l-[1px] ml-1" />
