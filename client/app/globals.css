@@ -2,10 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: Cairo;
-  src: url("/client/fonts/Cairo-Medium.ttf");
-}
+
 
 body {
   color: rgb(var(--foreground-rgb));
@@ -29,6 +26,10 @@ body {
 .transition-md {
   transition: all 0.4s;
   scroll-behavior: smooth;
+}
+
+.Cairo {
+  font-family: Cairo;
 }
 
 html {
@@ -106,6 +107,7 @@ html {
 @layer base {
   * {
     @apply border-border;
+
   }
 
   body {

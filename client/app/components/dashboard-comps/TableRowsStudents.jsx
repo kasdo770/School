@@ -21,7 +21,7 @@ export function TableRowsStudents(props) {
       <TableCell className="text-right p-5">{props.phone}</TableCell>
       <TableCell className="text-right p-5">{props.id}</TableCell>
       <TableCell
-        className="font-medium justify-start items-center flex gap-2 p-5"
+        className="font-medium Cairo justify-start items-center flex gap-2 p-5"
         dir="rtl"
       >
         <button>

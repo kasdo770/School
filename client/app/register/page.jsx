@@ -72,7 +72,7 @@ export default function Home() {
             </input>
           </section>
           <section className="flex justify-center">
-            <Link href='/register' className="flex justify-start text-[#757982] border-b-[1px] border-[#686b74] p-1 hover:text-[#9196a1] hover:cursor-pointer ">
+            <Link href='/login' className="flex justify-start text-[#757982] border-b-[1px] border-[#686b74] p-1 hover:text-[#9196a1] hover:cursor-pointer ">
               <text>لديك حساب؟</text>
             </Link>
           </section>

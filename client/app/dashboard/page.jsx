@@ -15,7 +15,7 @@ export default function Dashboard() {
   const [more, setMore] = useState(false);
 
   return (
-    <div className="h-screen flex">
+    <div className="h-screen flex Cairo">
       {/* nav -----------------------------------------------------------------------------*/}
       <div className="flex flex-col w-full">
         <div className="bg-[#ffffff] border-r-[1px] flex justify-between items-center p-3">
