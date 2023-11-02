@@ -77,7 +77,7 @@ export default function Home() {
 
         </container>
       </div>
-      <button onClick={Validate} className="absolute right-10 bottom-10 bg-[#FE7900] p-3 rounded-full hover:bg-[#FD8D00] active:bg-[#FEAA00]  ">
+      <button className="absolute right-10 bottom-10 bg-[#FE7900] p-3 rounded-full hover:bg-[#FD8D00] active:bg-[#FEAA00]  ">
         <AiOutlineSearch className="text-white w-5 h-5" />
       </button>
     </>
