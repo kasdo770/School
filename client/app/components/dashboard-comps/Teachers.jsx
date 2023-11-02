@@ -12,7 +12,7 @@ import { TableRowsPhone } from "./TableRowsPhone";
 export function TeacherTables() {
   return (
     <>
-      <Table className="bg-white sm:w-[90%] mx-auto my-5 hidden md:table">
+      <Table className="bg-white sm:w-[90%] mx-auto my-5 hidden lg:table">
         <TableHeader>
           <TableRow>
             <TableHead className="text-right">المادة</TableHead>
@@ -25,6 +25,13 @@ export function TeacherTables() {
         <TableBody>
           <TableRows
             name={"يوسف سامح البساطي السيد الكلب"}
+            id={"12345678912345"}
+            phone={"010101011021"}
+            title={" التعبان ابو عين واحده "}
+            subject={"عربييييييييييييييييييي"}
+          ></TableRows>
+          <TableRows
+            name={"يوسف سامح البساطي السيد الكلب"}
             id={"010101010101011021011021"}
             phone={"010101011021"}
             title={" التعبان ابو عين واحده "}
@@ -37,6 +44,76 @@ export function TeacherTables() {
             title={" التعبان ابو عين واحده "}
             subject={"عربييييييييييييييييييي"}
           ></TableRows>
+          <TableRows
+            name={"يوسف سامح البساطي السيد الكلب"}
+            id={"010101010101011021011021"}
+            phone={"010101011021"}
+            title={" التعبان ابو عين واحده "}
+            subject={"عربييييييييييييييييييي"}
+          ></TableRows>{" "}
+          <TableRows
+            name={"يوسف سامح البساطي السيد الكلب"}
+            id={"010101010101011021011021"}
+            phone={"010101011021"}
+            title={" التعبان ابو عين واحده "}
+            subject={"عربييييييييييييييييييي"}
+          ></TableRows>{" "}
+          <TableRows
+            name={"يوسف سامح البساطي السيد الكلب"}
+            id={"010101010101011021011021"}
+            phone={"010101011021"}
+            title={" التعبان ابو عين واحده "}
+            subject={"عربييييييييييييييييييي"}
+          ></TableRows>{" "}
+          <TableRows
+            name={"يوسف سامح البساطي السيد الكلب"}
+            id={"010101010101011021011021"}
+            phone={"010101011021"}
+            title={" التعبان ابو عين واحده "}
+            subject={"عربييييييييييييييييييي"}
+          ></TableRows>{" "}
+          <TableRows
+            name={"يوسف سامح البساطي السيد الكلب"}
+            id={"010101010101011021011021"}
+            phone={"010101011021"}
+            title={" التعبان ابو عين واحده "}
+            subject={"عربييييييييييييييييييي"}
+          ></TableRows>{" "}
+          <TableRows
+            name={"يوسف سامح البساطي السيد الكلب"}
+            id={"010101010101011021011021"}
+            phone={"010101011021"}
+            title={" التعبان ابو عين واحده "}
+            subject={"عربييييييييييييييييييي"}
+          ></TableRows>{" "}
+          <TableRows
+            name={"يوسف سامح البساطي السيد الكلب"}
+            id={"010101010101011021011021"}
+            phone={"010101011021"}
+            title={" التعبان ابو عين واحده "}
+            subject={"عربييييييييييييييييييي"}
+          ></TableRows>{" "}
+          <TableRows
+            name={"يوسف سامح البساطي السيد الكلب"}
+            id={"010101010101011021011021"}
+            phone={"010101011021"}
+            title={" التعبان ابو عين واحده "}
+            subject={"عربييييييييييييييييييي"}
+          ></TableRows>{" "}
+          <TableRows
+            name={"يوسف سامح البساطي السيد الكلب"}
+            id={"010101010101011021011021"}
+            phone={"010101011021"}
+            title={" التعبان ابو عين واحده "}
+            subject={"عربييييييييييييييييييي"}
+          ></TableRows>{" "}
+          <TableRows
+            name={"يوسف سامح البساطي السيد الكلب"}
+            id={"010101010101011021011021"}
+            phone={"010101011021"}
+            title={" التعبان ابو عين واحده "}
+            subject={"عربييييييييييييييييييي"}
+          ></TableRows>{" "}
           <TableRows
             name={"يوسف سامح البساطي السيد الكلب"}
             id={"010101010101011021011021"}
@@ -46,7 +123,15 @@ export function TeacherTables() {
           ></TableRows>
         </TableBody>
       </Table>
-      <div className="bg-white block md:hidden w-[90%] mx-auto h-[28rem] my-5 rounded-sm flex flex-col overflow-auto">
+
+      <div className="bg-white block lg:hidden w-[90%] mx-auto h-[80%] my-5 rounded-sm flex flex-col">
+        <TableRowsPhone
+          name={"يوسف سامح البساطي السيد الكلب"}
+          id={"010101010101011021011021"}
+          phone={"010101011021"}
+          title={" التعبان ابو عين واحده "}
+          subject={"عربييييييييييييييييييي"}
+        ></TableRowsPhone>
         <TableRowsPhone
           name={"يوسف سامح البساطي السيد الكلب"}
           id={"010101010101011021011021"}
