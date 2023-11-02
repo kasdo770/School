@@ -26,7 +26,7 @@ export function TableRowsStudents(props) {
       >
         <button>
           <BiEditAlt
-            className="text-[23px] hover:opacity-[60%]"
+            className="text-[18px] hover:opacity-[60%]"
             onClick={() => {
               setOn(!on);
             }}
