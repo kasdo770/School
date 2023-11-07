@@ -14,7 +14,8 @@ const studentSchema = new Schema({
         teacher: String,
     }],
     warnings: Number,
-    reports: [mongoose.SchemaTypes.ObjectId]
+    Edusystem: String,
+    Division: String,
 });
 
 studentSchema.methods.warnings = function () {
