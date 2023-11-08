@@ -145,7 +145,7 @@ export default function Home() {
               </p>
               <a
                 href="login"
-                className="bg-[#00b9ff] rounded-sm p-2 text-white my-10 hover:opacity-[60%] transition-sm"
+                className="bg-[#00b9ff] rounded-sm p-2 text-white my-10 hover:opacity-[60%] transition-sm select-none"
               >
                 سجل دخولك
               </a>
@@ -161,7 +161,7 @@ export default function Home() {
               </p>
               <a
                 href="register"
-                className="bg-[#ff7000] rounded-sm p-2 text-white my-10 hover:opacity-[60%] transition-sm"
+                className="bg-[#ff7000] rounded-sm p-2 text-white my-10 hover:opacity-[60%] transition-sm select-none"
               >
                 انشئ حساب مدرسة
               </a>
