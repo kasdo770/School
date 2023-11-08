@@ -14,7 +14,7 @@ export async function POST(request) {
             name: body.name,
             contactNo: body.contactNo,
             ID: body.ID,
-            password: (Math.random() * 1000000).toString(36).replace('.', ''),
+            password: body.password,
         }
     })
 
