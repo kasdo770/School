@@ -1,4 +1,6 @@
 const { getSchoolByName } = require("@/middleware/fetch/users")
+const prisma = require("@/lib/prisma")
+
 export async function ValidateName(name) {
     const { pass, data, log } = await getSchoolByName(name)
 

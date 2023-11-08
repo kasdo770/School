@@ -1,0 +1,131 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  Admin
+  Student
+  Parent
+  Teacher
+  School
+}
+
+type Quiz {
+  subject String?
+  mark    String?
+  date    String?
+}
+
+type Absent {
+  date    String?
+  teacher String?
+}
+
+model User {
+  id       String   @id @default(auto()) @map("_id") @db.ObjectId
+  name     String   @unique
+  password String   @unique
+  code     String   @unique
+  ID       String   @unique
+  role     Role
+  Table    Table[]
+  schoolId String?  @db.ObjectId
+  school   School?  @relation(fields: [schoolId], references: [id])
+  admin    Admin?
+  parent   Parent?
+  student  Student?
+  teacher  Teacher?
+  Class    Class?   @relation(fields: [classId], references: [id])
+  classId  String?  @db.ObjectId
+}
+
+model Admin {
+  id          String  @id @default(auto()) @map("_id") @db.ObjectId
+  jobInSchool String
+  userId      String? @unique @db.ObjectId
+  user        User?   @relation(fields: [userId], references: [id])
+}
+
+model Student {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  grade     String
+  quizzes   Quiz[]
+  absent    Absent[]
+  warnings  Int?
+  eduSystem String
+  division  String
+  userId    String?  @unique @db.ObjectId
+  user      User?    @relation(fields: [userId], references: [id])
+  parentId  String?  @db.ObjectId
+  parent    Parent?  @relation(fields: [parentId], references: [id])
+}
+
+model Parent {
+  id      String    @id @default(auto()) @map("_id") @db.ObjectId
+  student Student[]
+  userId  String?   @unique @db.ObjectId
+  user    User?     @relation(fields: [userId], references: [id])
+}
+
+model Teacher {
+  id      String  @id @default(auto()) @map("_id") @db.ObjectId
+  paycuts Int[]   @default([])
+  salary  Int
+  subject String
+  jobRole String
+  userId  String? @unique @db.ObjectId
+  user    User?   @relation(fields: [userId], references: [id])
+}
+
+model School {
+  id        String  @id @default(auto()) @map("_id") @db.ObjectId
+  name      String  @unique
+  contactNo String
+  ID        String
+  password  String
+  users     User[]
+  news      New[]
+  classes   Class[]
+}
+
+model New {
+  id          String  @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  description String
+  date        String
+  grade       String
+  schoolId    String? @db.ObjectId
+  school      School? @relation(fields: [schoolId], references: [id])
+}
+
+model Table {
+  id        String  @id @default(auto()) @map("_id") @db.ObjectId
+  subject   String
+  day       String
+  beginning String
+  end       String
+  peroid    String
+  teacher   User?   @relation(fields: [teacherId], references: [id])
+  teacherId String? @db.ObjectId
+  Class     Class?  @relation(fields: [classId], references: [id])
+  classId   String? @db.ObjectId
+}
+
+model Class {
+  id            String  @id @default(auto()) @map("_id") @db.ObjectId
+  name          String
+  totalStudents Int
+  students      User[]
+  timeTable     Table[]
+  grade         String
+  School        School? @relation(fields: [schoolId], references: [id])
+  schoolId      String? @db.ObjectId
+}
