@@ -7,7 +7,7 @@ import { Students } from '../components/dashboard-comps/Students'
 import Skeleton from '../components/Skeleton'
 export default function page() {
     const [page, setPage] = useState(1);
-    const [loading, setloading] = useState(true)
+    const [loading, setloading] = useState(false)
     return (
         <>
             <div className="flex flex-col w-full text-white bg-white">
@@ -56,7 +56,7 @@ export default function page() {
             <div className=" overflow-auto flex justify-center mt-10">
                 <div className={`${page == 1 ? "block" : "hidden"} `}>
                     <div className='grid grid-cols-1 md:grid-cols-3 gap-5 overflow-hidden'>
-                        <Skeleton loading={loading} numbers={10} ></Skeleton>
+                        <Skeleton loading={loading} numbers={4} ></Skeleton>
 
 
 
