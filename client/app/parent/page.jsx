@@ -7,7 +7,7 @@ import { Students } from '../components/dashboard-comps/Students'
 import Skeleton from '../components/Skeleton'
 export default function page() {
     const [page, setPage] = useState(1);
-    const [loading, setloading] = useState(false)
+    const [loading, setloading] = useState(true)
     const data = ["", "", ""]
     return (
         <>
@@ -27,7 +27,7 @@ export default function page() {
                         })}>
                             <h1 className={`sm:ml-5 text-[15px] md:text-[18px] border-b-[4px] w-20 transition-all duration-500   ${page == 1 ? "border-b-[#ff7000] 	 w-20" : "border-b-white border-b-0 w-0 	"
                                 }`}>
-                                بياناتك
+                                التحذيرات
                             </h1>
 
                         </button>
