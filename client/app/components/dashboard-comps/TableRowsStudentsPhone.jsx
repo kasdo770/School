@@ -16,8 +16,12 @@ export function TableRowsStudentsPhone(props) {
           <p className=""> {props.id}</p>
         </div>
         <div className="flex items-center border-b-2 py-5 px-4 sm:px-7 justify-between  ">
-          <p className=" font-bold">رقم الهاتف</p>
-          <p className=""> {props.phone}</p>
+          <p className=" font-bold">التحذيرات</p>
+          <p className=""> {props.warnings}</p>
+        </div>
+        <div className="flex items-center border-b-2 py-5 px-4 sm:px-7 justify-between  ">
+          <p className=" font-bold"> الصف</p>
+          <p className=""> {props.class}</p>
         </div>
         <div className="flex items-center border-b-2 py-5 px-4 sm:px-7 justify-between  ">
           <p className=" font-bold"> المرحلة</p>

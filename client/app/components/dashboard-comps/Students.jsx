@@ -18,7 +18,8 @@ export function Students() {
             <TableHead className="text-right"> الشعبة</TableHead>
             <TableHead className="text-right"> النظام التعليمي</TableHead>
             <TableHead className="text-right"> المرحلة</TableHead>
-            <TableHead className="text-right">رقم الهاتف</TableHead>
+            <TableHead className="text-right">التحذيرات</TableHead>
+            <TableHead className="text-right">الصف</TableHead>
             <TableHead className="text-right">الرقم القومي</TableHead>
             <TableHead className="text-right">الاسم</TableHead>
           </TableRow>
@@ -26,25 +27,37 @@ export function Students() {
         <TableBody>
           <TableRowsStudents
             name={"عمر سامح البساطي السيد الكلب"}
-            phone={"010101011021"}
+            warnings={"7"}
+
             id={"010101011010101011021021"}
+
             grade={"خامسه ثانةي "}
+            class={"8"}
+
             system={"سبانكنج  "}
             section={"علمي ادب"}
           ></TableRowsStudents>
           <TableRowsStudents
             name={"عمر سامح البساطي السيد الكلب"}
-            phone={"010101011021"}
+            warnings={"7"}
+
             id={"010101011010101011021021"}
+
             grade={"خامسه ثانةي "}
+            class={"8"}
+
             system={"سبانكنج  "}
             section={"علمي ادب"}
           ></TableRowsStudents>
           <TableRowsStudents
             name={"عمر سامح البساطي السيد الكلب"}
-            phone={"010101011021"}
+            warnings={"7"}
+
             id={"010101011010101011021021"}
+
             grade={"خامسه ثانةي "}
+            class={"8"}
+
             system={"سبانكنج  "}
             section={"علمي ادب"}
           ></TableRowsStudents>
@@ -53,33 +66,49 @@ export function Students() {
       <div className="bg-white block lg:hidden w-[90%] mx-auto h-[80%] my-5 rounded-sm flex flex-col">
         <TableRowsStudentsPhone
           name={"عمر سامح البساطي السيد الكلب"}
-          phone={"010101011021"}
+          warnings={"7"}
+
           id={"010101011010101011021021"}
+
           grade={"خامسه ثانةي "}
+          class={"8"}
+
           system={"سبانكنج  "}
           section={"علمي ادب"}
         ></TableRowsStudentsPhone>
         <TableRowsStudentsPhone
           name={"عمر سامح البساطي السيد الكلب"}
-          phone={"010101011021"}
+          warnings={"7"}
+
           id={"010101011010101011021021"}
+
           grade={"خامسه ثانةي "}
+          class={"8"}
+
           system={"سبانكنج  "}
           section={"علمي ادب"}
         ></TableRowsStudentsPhone>
         <TableRowsStudentsPhone
           name={"عمر سامح البساطي السيد الكلب"}
-          phone={"010101011021"}
+          warnings={"7"}
+
           id={"010101011010101011021021"}
+
           grade={"خامسه ثانةي "}
+          class={"8"}
+
           system={"سبانكنج  "}
           section={"علمي ادب"}
         ></TableRowsStudentsPhone>
         <TableRowsStudentsPhone
           name={"عمر سامح البساطي السيد الكلب"}
-          phone={"010101011021"}
+          warnings={"7"}
+
           id={"010101011010101011021021"}
+
           grade={"خامسه ثانةي "}
+          class={"8"}
+
           system={"سبانكنج  "}
           section={"علمي ادب"}
         ></TableRowsStudentsPhone>
