@@ -9,13 +9,9 @@ import { useState } from "react";
 import { AiOutlineSearch, AiOutlineHome } from "react-icons/ai";
 import { TeacherTables } from "../components/dashboard-comps/Teachers";
 import { Students } from "../components/dashboard-comps/Students";
-import Skeleton from "../components/Skeleton";
 
 export default function Dashboard() {
   const [page, setPage] = useState(1);
-  const [loading, setLoading] = useState(true);
-  const data = [""];
-
   return (
     <div className="h-screen flex Cairo">
       {/* nav -----------------------------------------------------------------------------*/}
@@ -40,16 +36,7 @@ export default function Dashboard() {
         {/* end of nav & start of body ---------------------------------------------------------*/}
 
         <div className="bg-[#f2f1f6] h-screen overflow-auto">
-          <Skeleton
-            loading={loading}
-            numbers={data}
-            className="w-[90%]"
-          ></Skeleton>
-          <div
-            className={`${page == 1 ? "block" : "hidden"} ${
-              loading == false ? "block" : "hidden"
-            }`}
-          >
+          <div className={`${page == 1 ? "block" : "hidden"} `}>
             <TeacherTables />
           </div>
           <div className={`${page == 2 ? "block" : "hidden"}`}>
@@ -144,6 +131,13 @@ export default function Dashboard() {
             }}
           >
             <p className="hidden md:block">الاخبار </p>
+            <BiNews className="text-[19px] md:text-md mx-auto md:mx-0" />
+          </button>
+          <button
+            className={`flex items-center justify-end w-[75%] md:w-[90%] mx-auto gap-2 px-2 py-2 rounded-sm cursor-pointer transition-sm hover:bg-[#ff7000] hover:text-white hover:opacity-[100%] pl-2`}
+            onClick={() => {}}
+          >
+            <p className="hidden md:block"> اضافة</p>
             <BiNews className="text-[19px] md:text-md mx-auto md:mx-0" />
           </button>
         </div>
