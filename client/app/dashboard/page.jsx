@@ -9,10 +9,12 @@ import { useState } from "react";
 import { AiOutlineSearch, AiOutlineHome } from "react-icons/ai";
 import { TeacherTables } from "../components/dashboard-comps/Teachers";
 import { Students } from "../components/dashboard-comps/Students";
+import Skeleton from "../components/Skeleton";
 
 export default function Dashboard() {
   const [page, setPage] = useState(1);
-  const [more, setMore] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const data = [""];
 
   return (
     <div className="h-screen flex Cairo">
@@ -38,11 +40,34 @@ export default function Dashboard() {
         {/* end of nav & start of body ---------------------------------------------------------*/}
 
         <div className="bg-[#f2f1f6] h-screen overflow-auto">
-          <div className={`${page == 1 ? "block" : "hidden"} `}>
+          <Skeleton
+            loading={loading}
+            numbers={data}
+            className="w-[90%]"
+          ></Skeleton>
+          <div
+            className={`${page == 1 ? "block" : "hidden"} ${
+              loading == false ? "block" : "hidden"
+            }`}
+          >
             <TeacherTables />
           </div>
           <div className={`${page == 2 ? "block" : "hidden"}`}>
             <Students />
+          </div>
+          <div
+            className={`${
+              page == 3 ? "block" : "hidden"
+            } flex items-center justify-center h-full`}
+          >
+            <p className=""> جاري العمل</p>
+          </div>
+          <div
+            className={`${
+              page == 4 ? "block" : "hidden"
+            } flex items-center justify-center h-full`}
+          >
+            <p className=""> جاري العمل</p>
           </div>
         </div>
       </div>
