@@ -8,17 +8,45 @@ export async function POST(request) {
 
     const utility = await createUtility(body)
 
+    let theclass = await prisma.class.findFirst({
+        where: {
+            grade: body.grade,
+            name: body.class,
+            schoolId: body.school
+        }
+    })
+
+    if (theclass == null) {
+        theclass = await prisma.class.create({
+            data: {
+                grade: body.grade,
+                name: body.class,
+                School: {
+                    connect: {
+                        id: body.school
+                    }
+                }
+            }
+        })
+    }
+
+
+
     const newUser = await prisma.user.create({
         data: {
             name: body.name,
             contactNo: body.contactNo,
             ID: body.ID,
             role: body.role,
-            password: (Math.random() * 1000000).toString(36).replace('.', ''),
-            code: (Math.random() * 1000000).toString(36).replace('.', ''),
+            password: body.password,
             school: {
                 connect: {
                     id: body.school
+                }
+            },
+            Class: {
+                connect: {
+                    id: theclass.id
                 }
             },
             Utility: utility

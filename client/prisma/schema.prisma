@@ -30,17 +30,24 @@ type Absent {
 }
 
 model User {
-  id       String  @id @default(auto()) @map("_id") @db.ObjectId
-  name     String  @unique
-  password String  @unique
-  code     String  @unique
-  ID       String  @unique
+  id       String    @id @default(auto()) @map("_id") @db.ObjectId
+  name     String    @unique
+  password String    @unique
+  ID       String    @unique
   role     Role
-  schoolId String? @db.ObjectId
-  school   School? @relation(fields: [schoolId], references: [id])
-  Class    Class?  @relation(fields: [classId], references: [id])
-  classId  String? @db.ObjectId
+  schoolId String?   @db.ObjectId
+  school   School?   @relation(fields: [schoolId], references: [id])
+  Class    Class?    @relation(fields: [classId], references: [id])
+  classId  String?   @db.ObjectId
+  warnings Warning[]
   Utility  Json
+}
+
+model Warning {
+  id          String  @id @default(auto()) @map("_id") @db.ObjectId
+  description String
+  student     User?   @relation(fields: [userId], references: [id])
+  userId      String? @db.ObjectId
 }
 
 model School {
@@ -78,7 +85,7 @@ model Table {
 model Class {
   id            String  @id @default(auto()) @map("_id") @db.ObjectId
   name          String
-  totalStudents Int
+  totalStudents Int?
   students      User[]
   timeTable     Table[]
   grade         String

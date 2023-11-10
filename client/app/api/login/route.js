@@ -5,13 +5,22 @@ export async function POST(request) {
 
     console.log(body)
 
+    const School = await prisma.school.findFirst({
+        where: {
+            ID: body.ID,
+            password: body.password
+        }
+    })
+
     const User = await prisma.user.findFirst({
         where: {
             ID: body.ID,
             password: body.password
         }
     })
-    const token = jwt.sign(User, process.env.SECRET_TOKEN, { expiresIn: '1h' })
+
+
+    const token = jwt.sign(User != null ? User : School, process.env.SECRET_TOKEN, { expiresIn: '1h' })
 
     return Response.json(token)
 }

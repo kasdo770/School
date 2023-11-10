@@ -12,11 +12,10 @@ let studentSchema = object({
 async function createUtility(body) {
     const newStudent = {
         grade: body.grade,
-        quizzes: body.quizzes,
         absent: body.absent,
-        warnings: body.warnings,
         Edusystem: body.Edusystem,
         Division: body.Division,
+        fatherWork: body.fatherWork
     }
 
 
