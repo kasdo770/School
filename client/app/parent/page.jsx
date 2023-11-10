@@ -57,7 +57,7 @@ export default function page() {
             <div className=" overflow-auto flex justify-center mt-10">
                 <div className={`${page == 1 ? "block" : "hidden"} `}>
                     <div className='grid grid-cols-1 md:grid-cols-3 gap-5 overflow-hidden'>
-                        <Skeleton loading={loading} numbers={data} ></Skeleton>
+                        <Skeleton loading={loading} numbers={data} classname={"md:w-[25rem] md:h-[15rem] w-[13rem] h-[12rem]"} ></Skeleton>
 
                         {data.map(i => (
                             <div className={`${loading == false ? "block" : "hidden"}`}>
