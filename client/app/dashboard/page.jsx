@@ -6,12 +6,14 @@ import { BiNews, BiLogOut } from "react-icons/bi";
 import { PiStudentBold } from "react-icons/pi";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { useState } from "react";
-import { AiOutlineSearch, AiOutlineHome } from "react-icons/ai";
+import { AiOutlineSearch, AiOutlineHome, AiOutlinePlus } from "react-icons/ai";
 import { TeacherTables } from "../components/dashboard-comps/Teachers";
 import { Students } from "../components/dashboard-comps/Students";
+import { Dialog } from "../components/dashboard-comps/Dialog";
 
 export default function Dashboard() {
   const [page, setPage] = useState(1);
+
   return (
     <div className="h-screen flex Cairo">
       {/* nav -----------------------------------------------------------------------------*/}
@@ -56,6 +58,7 @@ export default function Dashboard() {
           >
             <p className=""> جاري العمل</p>
           </div>
+          {/* <Dialog /> */}
         </div>
       </div>
       {/* end of body & start of sidebar ------------------------------------------------------*/}
@@ -135,10 +138,12 @@ export default function Dashboard() {
           </button>
           <button
             className={`flex items-center justify-end w-[75%] md:w-[90%] mx-auto gap-2 px-2 py-2 rounded-sm cursor-pointer transition-sm hover:bg-[#ff7000] hover:text-white hover:opacity-[100%] pl-2`}
-            onClick={() => {}}
+            onClick={() => {
+              setAdd(!add);
+            }}
           >
-            <p className="hidden md:block"> اضافة</p>
-            <BiNews className="text-[19px] md:text-md mx-auto md:mx-0" />
+            <p className="hidden md:block">اضافة</p>
+            <AiOutlinePlus className="text-[19px] md:text-md mx-auto md:mx-0" />
           </button>
         </div>
       </div>
