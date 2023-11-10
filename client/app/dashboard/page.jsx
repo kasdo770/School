@@ -12,8 +12,6 @@ import { Students } from "../components/dashboard-comps/Students";
 
 export default function Dashboard() {
   const [page, setPage] = useState(1);
-  const [more, setMore] = useState(false);
-
   return (
     <div className="h-screen flex Cairo">
       {/* nav -----------------------------------------------------------------------------*/}
@@ -43,6 +41,20 @@ export default function Dashboard() {
           </div>
           <div className={`${page == 2 ? "block" : "hidden"}`}>
             <Students />
+          </div>
+          <div
+            className={`${
+              page == 3 ? "block" : "hidden"
+            } flex items-center justify-center h-full`}
+          >
+            <p className=""> جاري العمل</p>
+          </div>
+          <div
+            className={`${
+              page == 4 ? "block" : "hidden"
+            } flex items-center justify-center h-full`}
+          >
+            <p className=""> جاري العمل</p>
           </div>
         </div>
       </div>
@@ -119,6 +131,13 @@ export default function Dashboard() {
             }}
           >
             <p className="hidden md:block">الاخبار </p>
+            <BiNews className="text-[19px] md:text-md mx-auto md:mx-0" />
+          </button>
+          <button
+            className={`flex items-center justify-end w-[75%] md:w-[90%] mx-auto gap-2 px-2 py-2 rounded-sm cursor-pointer transition-sm hover:bg-[#ff7000] hover:text-white hover:opacity-[100%] pl-2`}
+            onClick={() => {}}
+          >
+            <p className="hidden md:block"> اضافة</p>
             <BiNews className="text-[19px] md:text-md mx-auto md:mx-0" />
           </button>
         </div>
