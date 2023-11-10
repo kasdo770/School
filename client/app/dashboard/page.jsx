@@ -9,7 +9,6 @@ import { useState } from "react";
 import { AiOutlineSearch, AiOutlineHome, AiOutlinePlus } from "react-icons/ai";
 import { TeacherTables } from "../components/dashboard-comps/Teachers";
 import { Students } from "../components/dashboard-comps/Students";
-import { Dialog } from "../components/dashboard-comps/Dialog";
 
 export default function Dashboard() {
   const [page, setPage] = useState(1);
@@ -45,16 +44,14 @@ export default function Dashboard() {
             <Students />
           </div>
           <div
-            className={`${
-              page == 3 ? "block" : "hidden"
-            } flex items-center justify-center h-full`}
+            className={`${page == 3 ? "block" : "hidden"
+              } flex items-center justify-center h-full`}
           >
             <p className=""> جاري العمل</p>
           </div>
           <div
-            className={`${
-              page == 4 ? "block" : "hidden"
-            } flex items-center justify-center h-full`}
+            className={`${page == 4 ? "block" : "hidden"
+              } flex items-center justify-center h-full`}
           >
             <p className=""> جاري العمل</p>
           </div>
@@ -85,11 +82,10 @@ export default function Dashboard() {
 
         <div className="flex flex-col items-end md:mt-0 gap-3 text-[15px] lg:text-[17px] select-none">
           <button
-            className={`flex items-center justify-end w-[75%] md:w-[90%] mx-auto gap-2 px-2 py-2 rounded-sm cursor-pointer transition-sm hover:bg-[#ff7000] hover:text-white hover:opacity-[100%] pl-2 ${
-              page == 1
+            className={`flex items-center justify-end w-[75%] md:w-[90%] mx-auto gap-2 px-2 py-2 rounded-sm cursor-pointer transition-sm hover:bg-[#ff7000] hover:text-white hover:opacity-[100%] pl-2 ${page == 1
                 ? "opacity-[100%] bg-[#00b9ff] text-white "
                 : "opacity-[50%]"
-            }`}
+              }`}
             onClick={() => {
               setPage(1);
             }}
@@ -98,11 +94,10 @@ export default function Dashboard() {
             <FaChalkboardTeacher className="text-[19px] md:text-md mx-auto md:mx-0" />
           </button>
           <button
-            className={`flex items-center justify-end w-[75%] md:w-[90%] mx-auto gap-2 px-2 py-2 rounded-sm cursor-pointer transition-sm hover:bg-[#ff7000] hover:text-white hover:opacity-[100%] pl-2 ${
-              page == 2
+            className={`flex items-center justify-end w-[75%] md:w-[90%] mx-auto gap-2 px-2 py-2 rounded-sm cursor-pointer transition-sm hover:bg-[#ff7000] hover:text-white hover:opacity-[100%] pl-2 ${page == 2
                 ? "opacity-[100%] bg-[#00b9ff] text-white "
                 : "opacity-[50%]"
-            }`}
+              }`}
             onClick={() => {
               setPage(2);
             }}
@@ -111,11 +106,10 @@ export default function Dashboard() {
             <PiStudentBold className="text-[19px] md:text-md mx-auto md:mx-0" />
           </button>
           <button
-            className={`flex items-center justify-end w-[75%] md:w-[90%] mx-auto gap-2 px-2 py-2 rounded-sm cursor-pointer transition-sm hover:bg-[#ff7000] hover:text-white hover:opacity-[100%] pl-2 ${
-              page == 3
+            className={`flex items-center justify-end w-[75%] md:w-[90%] mx-auto gap-2 px-2 py-2 rounded-sm cursor-pointer transition-sm hover:bg-[#ff7000] hover:text-white hover:opacity-[100%] pl-2 ${page == 3
                 ? "opacity-[100%] bg-[#00b9ff] text-white "
                 : "opacity-[50%]"
-            }`}
+              }`}
             onClick={() => {
               setPage(3);
             }}
@@ -124,11 +118,10 @@ export default function Dashboard() {
             <AiOutlineSchedule className="text-[19px] md:text-md mx-auto md:mx-0" />
           </button>
           <button
-            className={`flex items-center justify-end w-[75%] md:w-[90%] mx-auto gap-2 px-2 py-2 rounded-sm cursor-pointer transition-sm hover:bg-[#ff7000] hover:text-white hover:opacity-[100%] pl-2 ${
-              page == 4
+            className={`flex items-center justify-end w-[75%] md:w-[90%] mx-auto gap-2 px-2 py-2 rounded-sm cursor-pointer transition-sm hover:bg-[#ff7000] hover:text-white hover:opacity-[100%] pl-2 ${page == 4
                 ? "opacity-[100%] bg-[#00b9ff] text-white "
                 : "opacity-[50%]"
-            }`}
+              }`}
             onClick={() => {
               setPage(4);
             }}

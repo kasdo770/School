@@ -103,6 +103,9 @@ export default function Home() {
               <text>لديك حساب؟</text>
             </Link>
           </section>
+
+
+
           <button onClick={Validate} className="w-full rounded-lg border-[1px] z-[2] bg-[#006279] p-2 mb-4 text-white hover:bg-[#008298] active:bg-[#0096A8] hover:text-white text-extrabold mt-5 text-lg border-none">تاكيد</button>
 
 
