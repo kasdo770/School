@@ -8,6 +8,7 @@ import Skeleton from '../components/Skeleton'
 export default function page() {
     const [page, setPage] = useState(1);
     const [loading, setloading] = useState(false)
+    const data = ["", "", ""]
     return (
         <>
             <div className="flex flex-col w-full text-white bg-white">
@@ -56,13 +57,15 @@ export default function page() {
             <div className=" overflow-auto flex justify-center mt-10">
                 <div className={`${page == 1 ? "block" : "hidden"} `}>
                     <div className='grid grid-cols-1 md:grid-cols-3 gap-5 overflow-hidden'>
-                        <Skeleton loading={loading} numbers={4} ></Skeleton>
+                        <Skeleton loading={loading} numbers={data} ></Skeleton>
 
+                        {data.map(i => (
+                            <div className={`${loading == false ? "block" : "hidden"}`}>
+                                <div key={i} class="border border-blue-300 shadow rounded-md  md:w-[25rem] md:h-[15rem] w-[13rem] h-[12rem]  mx-auto">
 
-
-
-
-
+                                </div>
+                            </div>
+                        ))}
                     </div>
                 </div>
                 <div className={`${page == 2 ? "block" : "hidden"}`}>
