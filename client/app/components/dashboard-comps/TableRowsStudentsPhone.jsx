@@ -1,9 +1,4 @@
-import { useState } from "react";
-import { BiEditAlt } from "react-icons/bi";
-
 export function TableRowsStudentsPhone(props) {
-  const [on, setOn] = useState(false);
-
   return (
     <div className="bg-[#f2f1f6]" dir="rtl">
       <div className="flex flex-col text-sm sm:text-[17px] bg-gray-100 border-2 rounded-sm mb-5 bg-white">

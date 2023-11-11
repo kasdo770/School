@@ -1,14 +1,15 @@
 "use client";
 import Image from "next/image";
 import { FaChalkboardTeacher, FaMoon } from "react-icons/fa";
-import { AiOutlineSchedule } from "react-icons/ai";
 import { BiNews, BiLogOut } from "react-icons/bi";
 import { PiStudentBold } from "react-icons/pi";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { useState } from "react";
-import { AiOutlineSearch, AiOutlineHome, AiOutlinePlus } from "react-icons/ai";
+import { AiOutlineSearch, AiOutlineSchedule } from "react-icons/ai";
 import { TeacherTables } from "../components/dashboard-comps/Teachers";
 import { Students } from "../components/dashboard-comps/Students";
+import { StudentDialog } from "../components/dashboard-comps/StuDialog";
+import { TeacherDialog } from "../components/dashboard-comps/TeaDialog";
 
 export default function Dashboard() {
   const [page, setPage] = useState(1);
@@ -44,18 +45,19 @@ export default function Dashboard() {
             <Students />
           </div>
           <div
-            className={`${page == 3 ? "block" : "hidden"
-              } flex items-center justify-center h-full`}
+            className={`${
+              page == 3 ? "block" : "hidden"
+            } flex items-center justify-center h-full`}
           >
             <p className=""> جاري العمل</p>
           </div>
           <div
-            className={`${page == 4 ? "block" : "hidden"
-              } flex items-center justify-center h-full`}
+            className={`${
+              page == 4 ? "block" : "hidden"
+            } flex items-center justify-center h-full`}
           >
             <p className=""> جاري العمل</p>
           </div>
-          {/* <Dialog /> */}
         </div>
       </div>
       {/* end of body & start of sidebar ------------------------------------------------------*/}
@@ -82,10 +84,11 @@ export default function Dashboard() {
 
         <div className="flex flex-col items-end md:mt-0 gap-3 text-[15px] lg:text-[17px] select-none">
           <button
-            className={`flex items-center justify-end w-[75%] md:w-[90%] mx-auto gap-2 px-2 py-2 rounded-sm cursor-pointer transition-sm hover:bg-[#ff7000] hover:text-white hover:opacity-[100%] pl-2 ${page == 1
+            className={`flex items-center justify-end w-[75%] md:w-[90%] mx-auto gap-2 px-2 py-2 rounded-sm cursor-pointer transition-sm hover:bg-[#ff7000] hover:text-white hover:opacity-[100%] pl-2 ${
+              page == 1
                 ? "opacity-[100%] bg-[#00b9ff] text-white "
                 : "opacity-[50%]"
-              }`}
+            }`}
             onClick={() => {
               setPage(1);
             }}
@@ -94,10 +97,11 @@ export default function Dashboard() {
             <FaChalkboardTeacher className="text-[19px] md:text-md mx-auto md:mx-0" />
           </button>
           <button
-            className={`flex items-center justify-end w-[75%] md:w-[90%] mx-auto gap-2 px-2 py-2 rounded-sm cursor-pointer transition-sm hover:bg-[#ff7000] hover:text-white hover:opacity-[100%] pl-2 ${page == 2
+            className={`flex items-center justify-end w-[75%] md:w-[90%] mx-auto gap-2 px-2 py-2 rounded-sm cursor-pointer transition-sm hover:bg-[#ff7000] hover:text-white hover:opacity-[100%] pl-2 ${
+              page == 2
                 ? "opacity-[100%] bg-[#00b9ff] text-white "
                 : "opacity-[50%]"
-              }`}
+            }`}
             onClick={() => {
               setPage(2);
             }}
@@ -106,10 +110,11 @@ export default function Dashboard() {
             <PiStudentBold className="text-[19px] md:text-md mx-auto md:mx-0" />
           </button>
           <button
-            className={`flex items-center justify-end w-[75%] md:w-[90%] mx-auto gap-2 px-2 py-2 rounded-sm cursor-pointer transition-sm hover:bg-[#ff7000] hover:text-white hover:opacity-[100%] pl-2 ${page == 3
+            className={`flex items-center justify-end w-[75%] md:w-[90%] mx-auto gap-2 px-2 py-2 rounded-sm cursor-pointer transition-sm hover:bg-[#ff7000] hover:text-white hover:opacity-[100%] pl-2 ${
+              page == 3
                 ? "opacity-[100%] bg-[#00b9ff] text-white "
                 : "opacity-[50%]"
-              }`}
+            }`}
             onClick={() => {
               setPage(3);
             }}
@@ -118,10 +123,11 @@ export default function Dashboard() {
             <AiOutlineSchedule className="text-[19px] md:text-md mx-auto md:mx-0" />
           </button>
           <button
-            className={`flex items-center justify-end w-[75%] md:w-[90%] mx-auto gap-2 px-2 py-2 rounded-sm cursor-pointer transition-sm hover:bg-[#ff7000] hover:text-white hover:opacity-[100%] pl-2 ${page == 4
+            className={`flex items-center justify-end w-[75%] md:w-[90%] mx-auto gap-2 px-2 py-2 rounded-sm cursor-pointer transition-sm hover:bg-[#ff7000] hover:text-white hover:opacity-[100%] pl-2 ${
+              page == 4
                 ? "opacity-[100%] bg-[#00b9ff] text-white "
                 : "opacity-[50%]"
-              }`}
+            }`}
             onClick={() => {
               setPage(4);
             }}
@@ -129,15 +135,20 @@ export default function Dashboard() {
             <p className="hidden md:block">الاخبار </p>
             <BiNews className="text-[19px] md:text-md mx-auto md:mx-0" />
           </button>
-          <button
-            className={`flex items-center justify-end w-[75%] md:w-[90%] mx-auto gap-2 px-2 py-2 rounded-sm cursor-pointer transition-sm hover:bg-[#ff7000] hover:text-white hover:opacity-[100%] pl-2`}
-            onClick={() => {
-              setAdd(!add);
-            }}
+          <div
+            className={` justify-center md:justify-end mx-auto w-[75%] md:w-[90%] transition-sm px-2 py-2 rounded-sm pl-2 ${
+              page == 2 ? "flex" : "hidden"
+            }`}
           >
-            <p className="hidden md:block">اضافة</p>
-            <AiOutlinePlus className="text-[19px] md:text-md mx-auto md:mx-0" />
-          </button>
+            <StudentDialog />
+          </div>
+          <div
+            className={` justify-center md:justify-end mx-auto w-[75%] md:w-[90%] transition-sm px-2 py-2 rounded-sm pl-2 ${
+              page == 1 ? "flex" : "hidden"
+            }`}
+          >
+            <TeacherDialog />
+          </div>
         </div>
       </div>
     </div>
