@@ -18,36 +18,33 @@ enum Role {
   School
 }
 
-type Quiz {
-  subject String?
-  mark    String?
-  date    String?
-}
-
-type Absent {
-  date    String?
-  teacher String?
+enum ReportType {
+  absent
+  complain
 }
 
 model User {
-  id       String    @id @default(auto()) @map("_id") @db.ObjectId
-  name     String    @unique
-  password String    @unique
-  ID       String    @unique
+  id       String   @id @default(auto()) @map("_id") @db.ObjectId
+  name     String   @unique
+  password String   @unique
+  ID       String   @unique
   role     Role
-  schoolId String?   @db.ObjectId
-  school   School?   @relation(fields: [schoolId], references: [id])
-  Class    Class?    @relation(fields: [classId], references: [id])
-  classId  String?   @db.ObjectId
-  warnings Warning[]
+  schoolId String?  @db.ObjectId
+  school   School?  @relation(fields: [schoolId], references: [id])
+  Class    Class?   @relation(fields: [classId], references: [id])
+  classId  String?  @db.ObjectId
+  Report   Report[]
   Utility  Json
 }
 
-model Warning {
-  id          String  @id @default(auto()) @map("_id") @db.ObjectId
+model Report {
+  id          String     @id @default(auto()) @map("_id") @db.ObjectId
   description String
-  student     User?   @relation(fields: [userId], references: [id])
-  userId      String? @db.ObjectId
+  student     User?      @relation(fields: [studentId], references: [id])
+  studentId   String?    @db.ObjectId
+  teacherName String
+  type        ReportType
+  date        String
 }
 
 model School {
