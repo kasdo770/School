@@ -78,12 +78,12 @@ export default function page() {
 
 
                     </div>
-                    <div className="flex items-center transition-sm   rounded-sm gap-x-5 ">
-                        <h1 className="sm:ml-5 text-[15px] md:text-[21px]">
+                    <div className="flex items-center transition-sm   rounded-sm md:gap-x-5 gap-x-2 ">
+                        <h1 className="sm:ml-5 text-[12px] md:text-[21px]">
 
                             اسكولا
                         </h1>
-                        <Image src={"/logo.png"} width={50} height={50} />
+                        <Image src={"/logo.png"} width={50} height={50} className="hidden md:block" />
 
 
                     </div>

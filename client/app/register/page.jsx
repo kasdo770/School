@@ -80,11 +80,13 @@ export default function Home() {
         className="lg:w-[50%] lg:rotate-0  lg:relative z-[-1] absolute m-0 p-0 w-[300%] block lg:hidden bottom-0 h-[16rem] lg:h-screen " />
       <container className=" w-[20rem] mx-auto  md:mx-[6rem] xl:mx-[12rem] bg-transparent">
 
-        <div dir="rtl" className="flex flex-col justify-center lg:justify-start items-center gap-4 my-4">
-          <Link href='/' className="hover:cursor-pointer">
+        <div className="flex items-center transition-sm   rounded-sm md:gap-x-5 gap-x-2 ">
+          <h1 className="sm:ml-5 text-[12px] md:text-[21px]">
 
-            <Image src={"/logo.png"} width={50} height={50} />
-          </Link>
+            اسكولا
+          </h1>
+          <Image src={"/logo.png"} width={50} height={50} className="hidden md:block" />
+
 
         </div>
 
