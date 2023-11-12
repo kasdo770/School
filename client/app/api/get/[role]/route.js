@@ -9,6 +9,7 @@ export async function GET(request, { params }) {
 
     const school = validateToken(headersList)
 
+
     const role = params.role
     const users = await prisma.user.findMany({
         where: {
@@ -17,6 +18,12 @@ export async function GET(request, { params }) {
         },
         include: {
             Class: true
+        }
+    })
+
+    const student = await prisma.user.findFirst({
+        where: {
+            id: users.id
         }
     })
 

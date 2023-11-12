@@ -8,6 +8,8 @@ export async function GET() {
 
     const user = validateToken(headersList)
 
+    let students
+
     const theuser = await prisma.user.findFirst({
         where: {
             ID: user.ID
@@ -18,6 +20,15 @@ export async function GET() {
         }
     })
 
+    for (let index = 0; index < theuser.Utility.length; index++) {
+        const element = theuser.Utility[index];
+        students = await prisma.user.findMany({
+            where: {
+                id: element.id
+            }
+        })
+    }
 
-    return Response.json(theuser)
+
+    return Response.json(theuser, { students: (students ? students : null) })
 }

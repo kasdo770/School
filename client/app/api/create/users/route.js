@@ -11,6 +11,8 @@ export async function POST(request) {
 
     const role = body.role.toLowerCase()
 
+    console.log(body)
+
     const { createUtility } = require("@/middleware/creations/" + role)
 
     const headersList = headers()
@@ -19,19 +21,6 @@ export async function POST(request) {
     const school = validateToken(headersList)
 
     const utility = await createUtility(body)
-
-
-
-    let theclass = await prisma.class.findFirst({
-        where: {
-            grade: body.grade,
-            name: body.class,
-            schoolId: school.id
-        }
-    })
-
-
-
 
     const newUser = await prisma.user.create({
         data: {
@@ -48,8 +37,18 @@ export async function POST(request) {
         }
     })
 
+    console.log(school.id)
+
+
+
     if (body.role == 'Student') {
-        console.log(body.gradename, body.grade)
+        let theclass = await prisma.class.findFirst({
+            where: {
+                grade: body.grade,
+                name: body.class,
+                schoolId: school.id
+            }
+        })
         if (theclass == null) {
             theclass = await prisma.class.create({
                 data: {
@@ -76,18 +75,34 @@ export async function POST(request) {
                 }
             }
         })
-        await prisma.user.create({
+        const parent = await prisma.user.findFirst({
+            where: {
+                ID: body.fatherID
+            }
+        })
+
+        if (parent == null) {
+            await prisma.user.create({
+                data: {
+                    name: ((body.name.split(" ")[1] + (body.name.split(" ")[2])) ? (body.name.split(" ")[1] + (body.name.split(" ")[2])) : body.name),
+                    ID: body.fatherID,
+                    role: "Parent",
+                    password: body.fatherpassword,
+                    school: {
+                        connect: {
+                            id: school.id
+                        }
+                    },
+                    Utility: [newUser.id]
+                }
+            })
+        }
+        await prisma.user.update({
+            where: {
+                ID: body.fatherID
+            },
             data: {
-                name: (body.name.split(" ")[1] + (body.name.split(" ")[2])),
-                ID: body.fatherID,
-                role: "Parent",
-                password: body.fatherpassword,
-                school: {
-                    connect: {
-                        id: school.id
-                    }
-                },
-                Utility: newUser
+                Utility: [parent.Utility, newUser.id]
             }
         })
 
