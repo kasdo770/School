@@ -76,7 +76,7 @@ export default function Home() {
             <section className='flex mt-5 mb-1 w-full z-[2] text-[20px] p-[7px] rounded-md outline-none border-solid items-center border-black  border-[1px]'>
               <FaHashtag className="w-6 h-6 pl-1 border-black border-l-[1px] ml-1" />
 
-              <input value={password} onChange={(e) => { setpassword(e.target.value) }} placeholder="كلمة المرور" className="px-2 w-full text-sm outline-none border-0 bg-transparent ">
+              <input type="password" value={password} onChange={(e) => { setpassword(e.target.value) }} placeholder="كلمة المرور" className="px-2 w-full text-sm outline-none border-0 bg-transparent ">
               </input>
             </section>
             {passerror && (
