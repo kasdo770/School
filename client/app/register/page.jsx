@@ -28,22 +28,25 @@ export default function Home() {
       if (password != confirmpass) {
         setpasserror("كلنة المرور ليست متطابقة")
       }
+
       else {
         setpasserror("")
+
       }
-      if (code.length !== 14) {
-        setcodeerror("هذه الرقم يجب اي يكون 14 رقم")
-      }
-      else {
-        setcodeerror("")
-      }
+
     }
     else {
       setpasserror("واحدة من الخانات فارغة")
     }
-    if (passerror == "" && codeerror == "") {
-      setloading(true)
+    if (code.length !== 14) {
+      console.log("error321")
+      setloading(false)
+      setcodeerror("هذه الرقم يجب اي يكون 14 رقم")
 
+    }
+    else if (passerror == "") {
+      setloading(true)
+      setcodeerror("")
       axios.post('/api/create/school', {
         name: name,
         ID: code,
@@ -51,9 +54,8 @@ export default function Home() {
       }).then((e) => {
         console.log(e)
         setloading(false)
-
         enqueueSnackbar('تم الانشاء بنجاح', { variant: 'success' })
-        router.push('/dashboard', { scroll: false })
+        router.push('/login', { scroll: false })
 
 
 

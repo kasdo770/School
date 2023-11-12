@@ -22,9 +22,10 @@ export default function Dashboard() {
   const [loading, setloading] = useState(false)
   useEffect(() => {
     const id = localStorage.getItem('token')
+    console.log(id)
     axios.get(`/api/verifytoken`, {
       headers: {
-        authorization: id,
+        'authorization': id,
       }
     }).catch((e) => {
       if (e) {
