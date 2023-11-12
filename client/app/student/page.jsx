@@ -52,7 +52,7 @@ export default function page() {
                 <div className="bg-[#009DD8] border-r-[1px] flex justify-between items-center p-3">
                     <a
                         href="/"
-                        className="ml-5 sm:ml-8 bg-[#C16514] p-2 rounded-lg hover:opacity-[60%] transition-sm"
+                        className="ml-0 md:ml-8 bg-[#C16514] p-2 rounded-lg hover:opacity-[60%] transition-sm"
                     >
                         العودة                     </a>
 
