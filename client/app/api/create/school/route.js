@@ -2,8 +2,10 @@ import dbConnect from "@/middleware/mongodb";
 const { prisma } = require("@/lib/prisma")
 const { ValidateSchool } = require("@/middleware/validations/create/school")
 
-export async function GET(request) {
+export async function POST(request) {
     const body = await request.json()
+
+    console.log(body)
 
     const { pass, log } = await ValidateSchool(body.name, body.ID)
 
