@@ -129,15 +129,15 @@ export function TeacherDialog() {
           </div>
           <div className="flex items-center justify-evenly mt-2"></div>
           <select data-te-select-init value={subject} onChange={(e) => { setsubject(e.target.value) }} className="w-[13rem] mx-auto mt-2">
-            <option value="arabic"> عربي</option>
-            <option value="english">انجليزي</option>
-            <option value="math">رياضيات</option>
-            <option value="french">فرنساوي</option>
-            <option value="chemistry">كيمياء</option>
-            <option value="physics">فيزياء</option>
-            <option value="religious teachings">تربية دينية</option>
-            <option value="art">تربية فنية</option>
-            <option value="activity?">نشاط؟</option>
+            <option value="عربي"> عربي</option>
+            <option value="انجليزي">انجليزي</option>
+            <option value="رياضيات">رياضيات</option>
+            <option value="فرنساوي">فرنساوي</option>
+            <option value="كيمياء">كيمياء</option>
+            <option value="فيزياء">فيزياء</option>
+            <option value="تربية دينية ">تربية دينية</option>
+            <option value="تربية فنية">تربية فنية</option>
+            <option value="نشاط؟">نشاط؟</option>
           </select>
           {error && (
             <label
