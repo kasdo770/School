@@ -9,7 +9,7 @@ import {
 import { TableRowsStudents } from "./TableRowsStudents";
 import { TableRowsStudentsPhone } from "./TableRowsStudentsPhone";
 
-export function Students() {
+export function Students(data) {
   return (
     <>
       <Table className="bg-white sm:w-[90%] mx-auto my-5 hidden lg:table">
@@ -25,93 +25,35 @@ export function Students() {
           </TableRow>
         </TableHeader>
         <TableBody>
-          <TableRowsStudents
-            name={"عمر سامح البساطي السيد الكلب"}
-            warnings={"7"}
+          {data.data.map((i) => (
+            <TableRowsStudents
+              name={i.name}
+              warnings={i.warnings ? i.warnings : 0}
+              id={i.ID}
+              grade={i.Utility.grade}
+              class={i.Class.name}
+              system={i.Utility.Edusystem}
+              section={i.Utility.Division}
+            ></TableRowsStudents>
+          ))}
 
-            id={"010101011010101011021021"}
 
-            grade={"خامسه ثانةي "}
-            class={"8"}
 
-            system={"سبانكنج  "}
-            section={"علمي ادب"}
-          ></TableRowsStudents>
-          <TableRowsStudents
-            name={"عمر سامح البساطي السيد الكلب"}
-            warnings={"7"}
-
-            id={"010101011010101011021021"}
-
-            grade={"خامسه ثانةي "}
-            class={"8"}
-
-            system={"سبانكنج  "}
-            section={"علمي ادب"}
-          ></TableRowsStudents>
-          <TableRowsStudents
-            name={"عمر سامح البساطي السيد الكلب"}
-            warnings={"7"}
-
-            id={"010101011010101011021021"}
-
-            grade={"خامسه ثانةي "}
-            class={"8"}
-
-            system={"سبانكنج  "}
-            section={"علمي ادب"}
-          ></TableRowsStudents>
         </TableBody>
       </Table>
       <div className="bg-white block lg:hidden w-[90%] mx-auto h-[80%] my-5 rounded-sm flex flex-col">
-        <TableRowsStudentsPhone
-          name={"عمر سامح البساطي السيد الكلب"}
-          warnings={"7"}
 
-          id={"010101011010101011021021"}
-
-          grade={"خامسه ثانةي "}
-          class={"8"}
-
-          system={"سبانكنج  "}
-          section={"علمي ادب"}
-        ></TableRowsStudentsPhone>
-        <TableRowsStudentsPhone
-          name={"عمر سامح البساطي السيد الكلب"}
-          warnings={"7"}
-
-          id={"010101011010101011021021"}
-
-          grade={"خامسه ثانةي "}
-          class={"8"}
-
-          system={"سبانكنج  "}
-          section={"علمي ادب"}
-        ></TableRowsStudentsPhone>
-        <TableRowsStudentsPhone
-          name={"عمر سامح البساطي السيد الكلب"}
-          warnings={"7"}
-
-          id={"010101011010101011021021"}
-
-          grade={"خامسه ثانةي "}
-          class={"8"}
-
-          system={"سبانكنج  "}
-          section={"علمي ادب"}
-        ></TableRowsStudentsPhone>
-        <TableRowsStudentsPhone
-          name={"عمر سامح البساطي السيد الكلب"}
-          warnings={"7"}
-
-          id={"010101011010101011021021"}
-
-          grade={"خامسه ثانةي "}
-          class={"8"}
-
-          system={"سبانكنج  "}
-          section={"علمي ادب"}
-        ></TableRowsStudentsPhone>
+        {data.data.map((i) => (
+          <TableRowsStudentsPhone
+            name={i.name}
+            warnings={i.warnings ? i.warnings : 0}
+            id={i.ID}
+            grade={i.Utility.grade}
+            class={i.Class.name}
+            system={i.Utility.Edusystem}
+            section={i.Utility.Division}
+          ></TableRowsStudentsPhone>
+        ))}
       </div>
     </>
   );

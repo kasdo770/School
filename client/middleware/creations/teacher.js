@@ -3,7 +3,8 @@ async function createUtility(body) {
         salary: body.salary,
         jobRole: body.jobRole,
         subject: body.subject,
-        paycuts: body.paycuts
+        paycuts: body.paycuts,
+        contactNo: body.contactNo
     }
 
     return newTeacher

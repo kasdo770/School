@@ -11,8 +11,12 @@ export function TableRowsPhone(props) {
           <p className=""> {props.id}</p>
         </div>
         <div className="flex items-center border-b-2 py-5 px-4 sm:px-7 justify-between  ">
-          <p className=" font-bold">رقم الهاتف</p>
-          <p className=""> {props.phone}</p>
+          <p className=" font-bold">الراتب</p>
+          <p className=""> {props.salary}</p>
+        </div>
+        <div className="flex items-center border-b-2 py-5 px-4 sm:px-7 justify-between  ">
+          <p className=" font-bold">الخصم</p>
+          <p className=""> {props.paycuts}</p>
         </div>
         <div className="flex items-center border-b-2 py-5 px-4 sm:px-7 justify-between  ">
           <p className=" font-bold"> اللقب</p>

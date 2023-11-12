@@ -8,6 +8,16 @@ export async function GET() {
 
     const user = validateToken(headersList)
 
+    const theuser = await prisma.user.findFirst({
+        where: {
+            ID: user.ID
+        },
+        include: {
+            Class: true,
+            Report: true
+        }
+    })
 
-    return Response.json(user)
+
+    return Response.json(theuser)
 }

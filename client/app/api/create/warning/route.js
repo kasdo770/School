@@ -14,9 +14,16 @@ export async function POST(request) {
 
     if (student == null) return Response.json("There is no student with that ID")
 
-    const warning = await prisma.warning.create({
+    const currentTime = new Date()
+    const month = currentTime.getMonth() + 1
+    const day = currentTime.getDate()
+    const year = currentTime.getFullYear()
+
+    const warning = await prisma.report.create({
         data: {
             description: body.description,
+            type: body.type,
+            date: `${day} / ${month} / ${year}`,
             student: {
                 connect: {
                     id: student.id

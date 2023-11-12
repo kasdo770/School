@@ -22,5 +22,5 @@ export async function POST(request) {
 
     const token = jwt.sign(User != null ? User : School, process.env.SECRET_TOKEN, { expiresIn: '1h' })
 
-    return Response.json(token)
+    return Response.json((User != null ? { token: token, role: User.role.toLowerCase() } : { token: token, role: 'dashboard' }))
 }

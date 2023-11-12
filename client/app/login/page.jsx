@@ -5,14 +5,39 @@ import Link from 'next/link'
 import { CgProfile } from "react-icons/cg";
 import { FaHashtag } from 'react-icons/fa'
 import { AiOutlineSearch } from 'react-icons/ai'
+import axios from "axios";
+import { useSnackbar } from "notistack";
+import { useRouter } from 'next/navigation'
+import Loader from '../components/Loader';
 export default function Home() {
   const [code, setcode] = useState("");
   const [password, setpassword] = useState("");
   const [passerror, setpasserror] = useState("");
-
+  const { enqueueSnackbar } = useSnackbar();
+  const router = useRouter()
+  const [loading, setloading] = useState(false)
   function Validate() {
     if (password && code) {
       setpasserror("")
+      setloading(true)
+      axios.post('/api/login', {
+        ID: code,
+        password: password
+      }).then((e) => {
+        console.log(e)
+        setloading(false)
+        localStorage.setItem("token", e.data.token)
+        router.push(`/${e.data.role}`, { scroll: false })
+        enqueueSnackbar('تم العملية بنجاح', { variant: 'success' })
+
+
+
+      }).catch((e) => {
+        setloading(false)
+        console.log(e)
+        enqueueSnackbar("هذا الحساب غير موجود", { variant: 'error' })
+
+      })
     }
     else {
       setpasserror("واحدة من الخانات فارغة")
@@ -74,6 +99,7 @@ export default function Home() {
           </div>
 
 
+          {loading ? (<Loader />) : ('')}
 
         </container>
       </div>

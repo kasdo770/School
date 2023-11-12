@@ -46,7 +46,7 @@ export default function Home() {
               href="register"
               className="bg-[#3D8BA1] p-2 rounded-lg hover:opacity-[60%] transition-sm"
             >
-              انضم لينا
+              انشئ مدرسة
             </a>
           </div>
         </div>

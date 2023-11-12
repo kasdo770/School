@@ -42,20 +42,18 @@ model Report {
   description String
   student     User?      @relation(fields: [studentId], references: [id])
   studentId   String?    @db.ObjectId
-  teacherName String
   type        ReportType
   date        String
 }
 
 model School {
-  id        String  @id @default(auto()) @map("_id") @db.ObjectId
-  name      String  @unique
-  contactNo String
-  ID        String
-  password  String
-  users     User[]
-  news      New[]
-  classes   Class[]
+  id       String  @id @default(auto()) @map("_id") @db.ObjectId
+  name     String  @unique
+  ID       String
+  password String
+  users    User[]
+  news     New[]
+  classes  Class[]
 }
 
 model New {

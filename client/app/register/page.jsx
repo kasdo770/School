@@ -5,6 +5,11 @@ import { CgProfile } from "react-icons/cg";
 import { FaHashtag } from 'react-icons/fa'
 import { AiOutlineSearch } from 'react-icons/ai'
 import Link from "next/link";
+import axios from "axios";
+import { useSnackbar } from "notistack";
+import { useRouter } from 'next/navigation'
+import Loader from '../components/Loader';
+
 export default function Home() {
   const [name, setname] = useState("");
   const [code, setcode] = useState("");
@@ -12,6 +17,11 @@ export default function Home() {
   const [password, setpassword] = useState("");
   const [confirmpass, setconfirmpass] = useState("");
   const [passerror, setpasserror] = useState("");
+  const { enqueueSnackbar } = useSnackbar();
+  const router = useRouter()
+  const [loading, setloading] = useState(false)
+
+
   function Validate() {
 
     if (password != "" && confirmpass != "" && name != "" && code != "") {
@@ -32,11 +42,31 @@ export default function Home() {
       setpasserror("واحدة من الخانات فارغة")
     }
     if (passerror == "" && codeerror == "") {
-      //send data
+      setloading(true)
+
+      axios.post('/api/create/school', {
+        name: name,
+        ID: code,
+        password: password
+      }).then((e) => {
+        console.log(e)
+        setloading(false)
+
+        enqueueSnackbar('تم الانشاء بنجاح', { variant: 'success' })
+        router.push('/dashboard', { scroll: false })
+
+
+
+      }).catch((e) => {
+        setloading(false)
+        console.log(e)
+        enqueueSnackbar("هذا الاسم او الرقم القومي متسخدم من قبل", { variant: 'error' })
+
+      })
     }
   }
   return (
-    <div dir="rtl" className="flex lg:flex-row justify-center lg:justify-end relative items-center  h-screen overflow-hidden w-full">
+    <div dir="rtl" className="flex lg:flex-row justify-center lg:justify-end relative items-center  h-screen w-full">
       <svg width="566" height="552" viewBox="0 0 566 552" fill="none" filter="hue-rotate(270deg)" xmlns="http://www.w3.org/2000/svg" className=" select-none h-full w-auto right-0  z-[-1] absolute hidden lg:block ">
         <path d="M64 72.1962L175 0H563V552H64L22.5 498.856V420.643L0 356.469L97.5 311.847L86 281.264L188.6 235.139L190 214.082L6.5 140.381L64 72.1962Z" fill="#B673F9" />
         <path d="M251 69L172.5 0H566V552H130L91.5 496.5L213.5 427L113.5 350.5L86 282L228.5 212L91.5 138.5L251 69Z" fill="#A858F7" />
@@ -82,13 +112,13 @@ export default function Home() {
           <section className='flex group mt-5 mb-1 w-full z-[2] text-[20px] p-[7px] rounded-md outline-none border-solid items-center border-black  border-[1px]'>
             <AiOutlineSearch className="w-6 h-6 pl-1 border-black border-l-[1px] ml-1" />
 
-            <input value={password} onChange={(e) => { setpassword(e.target.value) }} placeholder="كلمة المرور" className="px-2 w-full text-sm outline-none border-0 bg-transparent focus:border-dotted ">
+            <input value={password} type="password" onChange={(e) => { setpassword(e.target.value) }} placeholder="كلمة المرور" className="px-2 w-full text-sm outline-none border-0 bg-transparent focus:border-dotted ">
             </input>
           </section>
           <section className='flex group mt-5 mb-1 w-full z-[2] text-[20px] p-[7px] rounded-md outline-none border-solid items-center border-black  border-[1px]'>
             <AiOutlineSearch className="w-6 h-6 pl-1 border-black border-l-[1px] ml-1" />
 
-            <input value={confirmpass} onChange={(e) => { setconfirmpass(e.target.value) }} placeholder="تاكيد كلمة المرور" className="px-2 w-full text-sm outline-none border-0 bg-transparent focus:border-dotted ">
+            <input value={confirmpass} type="password" onChange={(e) => { setconfirmpass(e.target.value) }} placeholder="تاكيد كلمة المرور" className="px-2 w-full text-sm outline-none border-0 bg-transparent focus:border-dotted ">
             </input>
           </section>
           {passerror && (
@@ -112,8 +142,7 @@ export default function Home() {
 
 
         </div>
-
-
+        {loading ? (<Loader />) : ('')}
 
       </container>
     </div>

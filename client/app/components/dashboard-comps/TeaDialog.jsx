@@ -1,3 +1,4 @@
+"use client"
 import {
   Dialog,
   DialogContent,
@@ -18,10 +19,70 @@ import { Label } from "@radix-ui/react-dropdown-menu";
 import { Button } from "@radix-ui/themes";
 import Input from "../Input";
 import { AiOutlinePlus } from "react-icons/ai";
+import axios from "axios";
+import React, { useState } from 'react';
 
+import { useSnackbar } from "notistack";
+import Loader from '../Loader';
 export function TeacherDialog() {
+  const { enqueueSnackbar } = useSnackbar();
+  const [loading, setloading] = useState(false)
+  const [name, setname] = useState("")
+  const [code, setcode] = useState("")
+
+  const [password, setpassword] = useState("")
+  const [teachertitle, setteachertitle] = useState("")
+  const [salary, setsalary] = useState("")
+  const [discount, setdiscount] = useState([])
+  const [subject, setsubject] = useState("arabic")
+  const [error, seterrror] = useState("")
+
+  function Validate() {
+    const id = localStorage.getItem('token')
+
+    if (name == "" || code == "" || password == "" || teachertitle == "" || salary == "" || discount == "" || subject == "") {
+      seterrror("احد الخانات الفارغة")
+    }
+    else if (code.length !== 14) {
+      seterrror("الرقم القومي يجب ان يكون مكون من 14 رقم")
+    }
+    else {
+      seterrror("")
+      console.log(id)
+      axios.post('/api/create/users', {
+        name: name,
+        ID: code,
+        role: "Teacher",
+        password: password,
+        salary: salary,
+        jobRole: teachertitle,
+        subject: subject,
+        paycuts: discount,
+      }, {
+        headers: {
+          'authorization': id
+        }
+      }).then((e) => {
+        console.log(e)
+        setloading(false)
+
+        enqueueSnackbar('تم الانشاء بنجاح', { variant: 'success' })
+        window.location.reload(true)
+
+
+      }).catch((e) => {
+        setloading(false)
+        console.log(e)
+        enqueueSnackbar("هذا الاسم او الرقم القومي متسخدم من قبل", { variant: 'error' })
+
+      })
+
+    }
+  }
   return (
     <Dialog>
+      {loading ? (<Loader />) : ('')}
+
       <DialogTrigger asChild>
         <Button variant="outline">
           <div className="flex items-center gap-2 hover:opacity-[80%] active:opacity-[70%]">
@@ -39,61 +100,63 @@ export function TeacherDialog() {
           <div className="flex items-center justify-evenly">
             <div className="flex flex-col">
               <Label className="text-right">الاسم الثلاثي</Label>
-              <Input id="teachername" className="col-span-3" />
+              <Input value={name} setdata={setname} id="teachername" className="col-span-3" />
             </div>
             <div className="flex flex-col">
               <Label className="text-right"> الرقم القومي</Label>
-              <Input id="teacherid" className="col-span-3" />
+              <Input value={code} setdata={setcode} id="teacherid" className="col-span-3" />
             </div>
           </div>
           <div className="flex items-center justify-evenly">
             <div className="flex flex-col">
               <Label className="text-right"> الرمز</Label>
-              <Input id="teachercode" className="col-span-3" />
+              <Input value={password} setdata={setpassword} id="teachercode" className="col-span-3" />
             </div>
             <div className="flex flex-col">
               <Label className="text-right"> اللقب</Label>
-              <Input id="teachertitle" className="col-span-3" />
+              <Input value={teachertitle} setdata={setteachertitle} id="teachertitle" className="col-span-3" />
             </div>
           </div>
           <div className="flex items-center justify-evenly">
             <div className="flex flex-col">
               <Label className="text-right"> الراتب</Label>
-              <Input id="teachersalary" className="col-span-3" />
+              <Input value={salary} setdata={setsalary} id="teachersalary" className="col-span-3" />
             </div>
             <div className="flex flex-col">
               <Label className="text-right"> الخصم</Label>
-              <Input id="teacherdiscount" className="col-span-3" />
+              <Input value={discount} setdata={setdiscount} id="teacherdiscount" className="col-span-3" />
             </div>
           </div>
           <div className="flex items-center justify-evenly mt-2"></div>
-          <Select>
-            <SelectTrigger className="w-[13rem] mx-auto mt-2">
-              <SelectValue placeholder="المادة " />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectGroup>
-                <SelectItem value="arabic"> عربي</SelectItem>
-                <SelectItem value="english">انجليزي</SelectItem>
-                <SelectItem value="math">رياضيات</SelectItem>
-                <SelectItem value="french">فرنساوي</SelectItem>
-                <SelectItem value="chemistry">كيمياء</SelectItem>
-                <SelectItem value="physics">فيزياء</SelectItem>
-                <SelectItem value="religious teachings">تربية دينية</SelectItem>
-                <SelectItem value="art">تربية فنية</SelectItem>
-                <SelectItem value="activity?">نشاط؟</SelectItem>
-              </SelectGroup>
-            </SelectContent>
-          </Select>
+          <select data-te-select-init value={subject} onChange={(e) => { setsubject(e.target.value) }} className="w-[13rem] mx-auto mt-2">
+            <option value="arabic"> عربي</option>
+            <option value="english">انجليزي</option>
+            <option value="math">رياضيات</option>
+            <option value="french">فرنساوي</option>
+            <option value="chemistry">كيمياء</option>
+            <option value="physics">فيزياء</option>
+            <option value="religious teachings">تربية دينية</option>
+            <option value="art">تربية فنية</option>
+            <option value="activity?">نشاط؟</option>
+          </select>
+          {error && (
+            <label
+              className={`font-semibold text-sm text-red-600 ml-4`}
+            >
+              {error}
+            </label>
+          )}
         </div>
 
         <DialogFooter>
-          <Button
+          <button
             type="submit"
+            onClick={Validate}
+
             className="border-2 border-black rounded-sm p-1 text-sm hover:bg-gray-200 active:bg-gray-300"
           >
             اضافة
-          </Button>
+          </button>
         </DialogFooter>
       </DialogContent>
     </Dialog>

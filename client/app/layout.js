@@ -1,16 +1,14 @@
+"use client"
 import './globals.css'
-
-
-export const metadata = {
-  title: 'Schoola',
-  description: 'Easier School system',
-}
+import { SnackbarProvider } from 'notistack'
 
 export default function RootLayout({ children }) {
   return (
     <html lang="ar">
       <body>
-        {children}
+        <SnackbarProvider>
+          {children}
+        </SnackbarProvider>
       </body>
     </html>
   )
